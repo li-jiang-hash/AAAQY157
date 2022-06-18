@@ -1,0 +1,36 @@
+@charset "UTF-8";
+body ul {
+  list-style: none;
+  padding: 0;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: #F00;
+  font-weight: bold;
+  line-height: 30px;
+  cursor: pointer;
+}
+body ul > li {
+  background-color: #baf;
+  border-radius: 15px;
+  transition: 3s 0.1s all cubic-bezier(0.11, 0.98, 0.8, -0.02);
+}
+body ul > li:hover {
+  color: #FFFF;
+  border-radius: 15px;
+}
+body ul > li:hover > ul {
+  height: 120px;
+  transition: 3s 0.1s all cubic-bezier(0.11, 0.98, 0.8, -0.02);
+}
+body ul > li:hover > ul {
+  background-color: #f8f8f8;
+}
+body ul > li:hover > ul > li {
+  border-radius: 15px;
+}
+body ul > li > ul {
+  height: 0;
+  overflow: hidden;
+  transition: 3s 0.1s all cubic-bezier(0.11, 0.98, 0.8, -0.02);
+}
