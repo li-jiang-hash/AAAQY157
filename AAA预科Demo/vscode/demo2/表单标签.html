@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>Document</title>
+	</head>
+	<body>
+		<!--
+			form:用来向后台发送数据的标签，我们的表单标签只有写到这个标签里面才能正常的发送到后台
+				action:用来填写处理我们请求的服务器路径/地址的
+				method:用来表示我们向后台发送请求的方式的，如果不写默认是get请求
+					get:直接在地址栏进行拼接数据发送到后台
+						发送方式:地址?key=value&key=value....
+						相对get不安全
+						get请求在不同的浏览器有长度限制
+						不能传文件
+						我们获取一些信息的时候都是用get请求
+					post:会在我们的请求体中进行包装发送到后台
+						会在我们的请求体(requestBody)中进行封装发送到后台
+						相对而言post更安全一点
+						post没有长度限制，但是如果传递的文件太大，可以在服务器端进行设置可以接受的最大文件大小
+						可以传文件
+						我们向服务器传递一些私密信息的时候用post请求(密码/性别/姓名/电话/邮箱)
+			input:可以根据type里面的值的不同显示出不同的表单控件
+				type:用来表示这是一个什么表单控件的
+					text:文本输入框
+					password:密码输入框,里面的内容会使用*或●来代替显示
+					url:地址/网址输入框，有网址输入验证
+					email:邮箱输入框，有邮箱输入验证
+					number:数字输入框,有数字输入的验证
+					submit:用来进行提交的按钮
+					reset:用来进行重置表单的按钮(恢复到默认显示效果)
+					button:用来定义一个简单的按钮的(没有任何效果)
+					radio:用来定义一个单选框的,我们需要设置形同的name值才能有单选效果,如果想让后台接受到具体值，需要添加value属性
+					checkbox:用来定义一个多选框的,如果想让后台接受到具体值，需要添加value属性
+					color:颜色选择框
+					file:文件输入框
+					hidden:隐藏这个输入框
+					image:用来向后台发送我们鼠标点击的偏移量,需要有src属性，这个属性和我们的img中的src一样,默认有和submit一样的提交效果
+					date:设置一个日期输入框
+					time:设置一个时间输入框
+				name:用来给我们向后台传入的参数起个名字的
+				value:用来设置我们的文本输入框的默认输入内容，如果是按钮就是设置按钮的显示内容，如果是单选或复选框就是设置的默认提交内容
+				readonly:设置这个输入框是只读的
+				required:设置这个选项是必填的
+				maxlength:设置我们输入的字段的最大长度(如果是数字输入框，那么这个属性就不能正常工作了)
+				placeholder:翻译过来是占位符的意思，用来设置我们输入框的提示内容的
+				max:在数字输入框中可以输入的最大值
+				min:在数字输入框中可以输入的最小值
+				checked:如果是单选或复选框，可以设置默认选中有此属性的选择框
+			button:双标签，用来定义我们的按钮的，设置按钮的显示内容需要写在button标签中间(如果不写type属性默认是type="submit")
+				type:用来表示这是一个什么按钮的
+					submit:用来进行提交的按钮
+					reset:用来进行重置表单的按钮(恢复到默认显示效果)
+					button:用来定义一个简单的按钮的(没有任何效果)
+			textarea:(双标签)多行文本框，默认值填写在标签中间
+				rows:用来设置我们的多行文本框可以写多少行
+				cols:用来设置我们的多行文本框一行可以写多少字
+			label:用来绑定input，可以有点击我们的文字和点击输入框有一样的效果
+				for:用来填写绑定的input的id的属性值的
+			fieldset:用来给我们的表单元素做一个分组的
+			legend:用来和fieldset一起使用，给分组起一个组名的
+				语法案例：
+					<fieldset>
+						<legend>组名</legend>
+						表单标签
+					</fieldset>
+			select:用来定义一个下拉列表(多选/单选列表)的
+				name:用来给我们向后台传入的参数起个名字的
+				disabled:用来禁用该下拉列表
+				multiple:用来设置我们的下拉列表是多选的
+				size:用来设置我们的下拉列表的显示条目的
+				required:定义我们的下拉列表是必填的选项
+			select>option:用来定义一个下拉的选项的
+				disabled:用来禁用该选项的
+				selected:用来默认选中该选项的
+				value:用来定义我们向后台传入的值的,如果不写，默认传递option标记的文本
+			optgroup:用来给我们select中的option进行分组的
+				label:用来填写我们分组的组名的
+					<select name="add" required>
+						<option value="" disabled selected>---请选择---</option>
+						<optgroup label="组名">
+							<option>选项</option>
+							<option>选项</option>
+						</optgroup>
+						<option>选项</option>
+						<option>选项</option>
+					</select>
+			datalist:用来定义我们的input输入框的提示内容的
+				id:用来填写我们input标签的list属性的值的
+			datalist>option:用来定义我们一条提示信息的
+				label:用来定义我们的输入什么文本开始触发这条提示
+				value:我们点击提示内容之后默认填入的值
+		-->
+		<table bgcolor="#ff0088" width="50px" height="20px">
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+		<form action="123.php" method="get">
+			<fieldset>
+				<legend>基本用户信息</legend>
+				<label for="aaa">用户名：</label>
+				<input id="aaa" type="text" name="q" placeholder="请输入您的用户名" /><br />
+				密码：<input type="password"/><br />
+				url:<input type="url" /><br />
+				email:<input type="email" /><br />
+				number:<input type="number" maxlength="5" /><br />
+
+				性别:
+					<label for="men">男：</label>
+					<input id="men" checked type="radio" name="sex" value="men" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<label for="women">女：</label>
+					<input id="women" type="radio" name="sex" value="women" /><br />
+			</fieldset>
+			爱好:<br />
+				唱：<input type="checkbox" name="link" value="唱" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				跳：<input checked type="checkbox" name="link" value="条" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				rap：<input type="checkbox" name="link" value="rap" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				篮球：<input type="checkbox" name="link" value="篮球" /><br />
+			你喜欢的颜色:<input type="color" /><br />
+			请上传您的作业:<input type="file" /><br />
+			<input type="hidden" value="1234568877" />
+			<!-- 请你点击:<input type="image" name="image" src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/628189716/O1CN01E2aynM2Ldyw1K23o4_!!0-item_pic.jpg_460x460Q90.jpg_.webp" /> -->
+			<input type="date" /><br />
+			<input type="time" /><br />
+			<hr />
+			<h2>周一内容</h2>
+			请输入您的介绍:
+			<textarea rows="3" cols="10">这个人很神秘，什么都没留下来</textarea>
+			<br />
+			城市：
+			<select name="add" required>
+				<option value="" disabled selected>---请选择---</option>
+				<optgroup label="河南">
+					<option>郑州</option>
+					<option>开封</option>
+					<option>信阳</option>
+					<option value="258488">南阳</option>
+					<option>驻马店</option>
+				</optgroup>
+				<option>唐山</option>
+				<option>北京</option>
+				<option>上海</option>
+				<option>广州</option>
+				<option>深圳</option>
+				<option>哈尔冰</option>
+				<option>成都</option>
+			</select>
+			<br />
+			请输入:<input type="text" list="tishi" name="tishi" />
+			<datalist id="tishi">
+				<option label="输入内容" value="自动填充内容" />
+				<option label="张麻子" value="张浮生" />
+				<option label="张三" value="罗翔教授虚拟人物" />
+				<option label="赵四" value="尼古拉斯·赵四" />
+				<option label="小米洗衣机" value="小米洗衣机" />
+			</datalist>
+			<br />
+			<input type="submit" value="登录" />
+			<input type="reset" value="清空" />
+			<input type="button" value="注册" />
+			<!-- 
+			<hr />
+			<button type="submit">登录</button>
+			<button type="reset">登录</button>
+			<button type="button">登录</button> 
+			-->
+		</form>
+	</body>
+</html>
