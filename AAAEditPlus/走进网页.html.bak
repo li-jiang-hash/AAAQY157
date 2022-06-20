@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<title>走进网页</title>
+		<style>
+			p{text-indent:2em}
+			body,img{margin:0;padding:0;}
+			div{padding:0 auto;}
+		</style>
+	</head>
+	<body>
+		<img src="./img/HTML.webp" align="right" width="450px" />
+		<h1>走进HTML</h1>
+		<h3>HTML简介</h3>
+		<p>HTML的全称为超文本标记语言，是一种标记语言。它包括一系列标签.通过这些标签可以将网络上的文档格式统一，使分散的nterneti资源
+		连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。</p><p>
+		超文本是一种组织信息的方式，它通过超级链接方法将文本中的文字、图表与其他信息媒体相关联。这些相互关联的信息媒体可能在同一文本
+		中，也可能是其他文件，或是地理位置相距遥远的某台计算机上的文件。这种组织信息方式将分布在不同位置的信息资源用随机方式进行连接，
+		为人们查找，检索信息提供方便。</p>
+		<h3>HTML定义</h3>
+		<p>
+		超文本标记语言是标准通用标记语言下的一个应用，也是一种规范，一种标准，它通过标记符号来标记要显示的网页中的各个部分。网页文件
+		本身是一种文本文件，通过在文本文件中添加标记符，可以告诉浏览器如何显示其中的内容（如：文字如何处理，画面如何安排，图片如何显示
+		等)。浏览器按顺序阅读网页文件，然后根据标记符解释和显示其标记的内容，对书写出错的标记将不指出其错误，且不停止其解释执行过程，
+		编制者只能通过显示效果来分析出错原因和出错部位。但需要注意的是，对于不同的浏览器，对同一标记符可能会有不完全相同的解释，因而可
+		能会有不同的显示效果。
+		</p>
+		<h4>
+			<a href="https://www.baidu.com">点我了解更多HTML内容</a>
+		</h4>
+		<div>
+			<ol>
+				<li>
+					<font color="#BFA" face="叶根友毛笔行书简体" size="7">华山派</font>
+					<ul>
+						<li>岳不群</li>
+						<li>令狐冲</li>
+						<li>岳林珊</li>
+					</ul>
+				</li>
+				<li>
+					<font color="#BFA" face="方正少儿简体" size="7">峨眉派</font>
+					<ul>
+						<li>灭绝师太</li>
+						<li>周芷若</li>
+						<li>裘干仞</li>
+					</ul>
+				</li>
+				<li>
+					<font color="#BFA" face="等线" size="7">古墓派</font>
+					<ul>
+						<li>小龙女</li>
+						<li>杨过</li>
+						<li>梅超风</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+		<div>
+		<ul>
+			<li>
+				<font color="#0000ff" size="6" face="楷体"><b>战士</b></font>
+				<ol>
+					<li>
+						亚瑟
+						<ul>
+							<li>暗影战斧</li>
+							<li>复活甲</li>
+						</ul>
+					</li>
+					<li>宫本</li>
+						<ul>
+							<li>暗影战斧</li>
+							<li>反甲</li>
+						</ul>
+					<li>赵云</li>
+				</ol>
+			</li>
+			
+			<li><font color="#0000ff" size="6" face="楷体"><b>法师</b></font></li>
+				<ol>
+					<li>
+						甄姬
+						<ul>
+							<li>冰霜法杖</li>
+						</ul>
+					</li>
+					<li>王昭君</li>
+					<li>诸葛亮</li>
+					<ul>
+						<li>弑神之书</li>
+					</ul>
+				</ol>
+					<li><font color="#0000ff" size="6" face="楷体"><b>射手</b></font></li>
+					<ol>
+						<li>
+							后羿
+							<ul>
+								<li>逐日之弓</li>
+								<li>泣血之刃</li>
+							</ul>
+						</li>
+						<li>虞姬</li>
+						<li>鲁班</li>
+					</ol>
+		</ul>
+		</div>
+	</body>
+</html>
