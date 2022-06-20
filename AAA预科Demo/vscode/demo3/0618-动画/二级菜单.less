@@ -4,7 +4,7 @@
 @all_height: @l_h * 4;
 @cubic-bezier: cubic-bezier(.11,.98,.8,-0.02);
 body {
-   ul {
+   ul.box {
       list-style: none;
       padding: 0;
       width: 300px;
@@ -16,14 +16,17 @@ body {
       cursor: pointer;
 
       >li {
-         background-color: #baf;
-         border-radius: @height;
+         // background-color: #baf;
+         // border-radius: @height;
          transition: 3s .1s all @cubic-bezier;
-
+         >div{
+            height: @l_h;
+            background-color: #bfa;
+            border-radius: @height;
+         }
          &:hover {
             border-radius: @height;
             color: #FFFF;
-            border-radius: @height;
             >ul {
                // display: block;
                height: @all_height;
@@ -31,8 +34,10 @@ body {
             }
             >ul{
                background-color: #f8f8f8;
+               list-style: none;
                >li{
-                  border-radius: @height;
+                  padding: 0;
+                  
                }
             }
          }
@@ -42,6 +47,11 @@ body {
             height: 0;
             overflow: hidden;
             transition: 3s .1s all @cubic-bezier;
+            padding: 0px;
+            >li{
+               background-color: #baf;
+               border-radius: @height;
+            }
          }
       }
    }
