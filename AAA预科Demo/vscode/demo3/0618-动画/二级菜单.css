@@ -11,7 +11,7 @@ body ul.box {
   cursor: pointer;
 }
 body ul.box > li {
-  transition: 3s 0.1s all cubic-bezier(0.11, 0.98, 0.8, -0.02);
+  transition: 3s 0.1s all cubic-bezier(0, 2, 1, -1.59);
 }
 body ul.box > li > div {
   height: 30px;
@@ -24,7 +24,7 @@ body ul.box > li:hover {
 }
 body ul.box > li:hover > ul {
   height: 120px;
-  transition: 3s 0.1s all cubic-bezier(0.11, 0.98, 0.8, -0.02);
+  transition: 3s 0.1s all cubic-bezier(0, 2, 1, -1.59);
 }
 body ul.box > li:hover > ul {
   background-color: #f8f8f8;
@@ -36,7 +36,7 @@ body ul.box > li:hover > ul > li {
 body ul.box > li > ul {
   height: 0;
   overflow: hidden;
-  transition: 3s 0.1s all cubic-bezier(0.11, 0.98, 0.8, -0.02);
+  transition: 3s 0.1s all cubic-bezier(0, 2, 1, -1.59);
   padding: 0px;
 }
 body ul.box > li > ul > li {
