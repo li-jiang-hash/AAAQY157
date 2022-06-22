@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="李江">
+		<meta name="Keywords" content="搜索引擎关键字">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			h1{
+				background-color: #BFA;
+				color: #BFA;
+				/* text-align: center; */
+			}
+			h1::selection{
+				background-color: red;
+				color: #FFF;
+			}
+		</style>
+	</head>
+	<body>
+	<center><h1>你好,我叫李江，来自河南西峡。</h1></center>
+		<img src="./8121621.jpg" alt="Error" />
+		<img src="file:///E:\Users\Administrator\Desktop\499550.jpg" alt="Error" />
+	</body>
+</html>

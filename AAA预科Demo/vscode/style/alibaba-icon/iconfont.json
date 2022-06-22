@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "658012",
+      "name": "飞机",
+      "font_class": "feiji",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "922319",
+      "name": "ic_serch",
+      "font_class": "icserch",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "1703356",
+      "name": "鲨鱼",
+      "font_class": "whale__easyiconnet",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "5045198",
+      "name": "虾",
+      "font_class": "xia",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "6995852",
+      "name": "鸡",
+      "font_class": "ji",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "15392879",
+      "name": "avatar11",
+      "font_class": "11",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "20909262",
+      "name": "龙",
+      "font_class": "long",
+      "unicode": "f3f7",
+      "unicode_decimal": 62455
+    }
+  ]
+}

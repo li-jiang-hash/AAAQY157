@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Generator" content="EditPlus®" />
+    <meta name="Author" content="@李江" />
+    <meta name="Keywords" content="AAA练习" />
+    <meta name="Description" content="这是一个学生鸡肋的经历" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        background-color: #bfa;
+        color: #bfa;
+        text-align: center;
+      }
+      h1::selection {
+        background-color: red;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>你好，我叫李江，来自河南西峡。</h1>
+    <img src="./8121621.jpg" alt="Img-URL_Error" />
+    <a href="https://www.baidu.com" target="_blank"><img src="file:///E:\Users\Administrator\Desktop\499550.jpg" alt="Img-URL_Error" /></a>
+  </body>
+</html>

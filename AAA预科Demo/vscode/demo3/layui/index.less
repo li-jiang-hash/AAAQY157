@@ -1,0 +1,244 @@
+@charset "UTF-8";
+.cleahei::after {
+   /* 关于解决高度塌陷 */
+   content: '';
+   display: block;
+   clear: both;
+}
+a{
+   text-decoration: none;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 宋体;
+   color: #b8b6b4;
+}
+*::selection{
+   background-color: #0F0;
+}
+
+body {
+   background-color: #eee;
+   .nav {
+      position: relative;
+      background-color: #100903;
+      width: 100%;
+      height: 60px;
+      padding: 0 13% 0 15%;
+
+      span {
+         line-height: 60px;
+         width: 120px;
+         font-size: 36px;
+      }
+
+      #search {
+         position: absolute;
+         top: 20px;
+         left: 25%;
+         width: 120px;
+         height: 40px;
+
+         input {
+            width: 150px;
+            height: 24px;
+            background-color: #1c1610;
+            border-style: none;
+            line-height: 24px;
+            padding-left: 25px;
+
+         }
+
+         i {
+            position: absolute;
+            left: 2px;
+            top: 5px;
+            margin: 0 3px 0 3px;
+         }
+      }
+
+      #list {
+         list-style: none;
+         position: absolute;
+         right: 0px;
+         top: 0;
+         line-height: 60px;
+         float: right;
+         width: 50%;
+         margin-right: 13%;
+
+         li {
+            float: left;
+            margin: 0 15px 0 15px;
+            padding: 0 5% 0 5%;
+
+            a {
+               color: inherit;
+
+               i {
+                  margin: 0 0 0 5px;
+               }
+            }
+         }
+      }
+   }
+
+   .content {
+      width: 100%;
+      height: 600px;
+      background-image: url(./img/back-content.jpg);
+      background-size: 100% 100%;
+
+      &>i {
+         color: rgba(201, 157, 157, .5);
+         margin: 4% 0 0 0;
+         text-align: center;
+         width: 100%;
+
+         &:hover {
+            // font-size: 50px;
+            background-color: #FF0000;
+         }
+      }
+
+      h1,
+      p {
+         text-align: center;
+         margin: 30px 0;
+      }
+      p{
+         a{
+            color: inherit;
+            text-decoration: underline;
+         }
+      }
+      .size{
+         font-size: 14px;
+      }
+      .download{
+         width: 200px;
+         height: 60px;
+         display: block;
+         background-color: inherit;
+         margin: 15px auto;
+         line-height: 60px;
+         text-align: center;
+         border: 1px solid #726457;
+         color: inherit;
+         font-size: 30px;
+         text-decoration: none;
+      i{
+         font-size: 26px;
+      }
+         &:hover{
+            border-radius: 30px;
+            transition: .5s;
+            background-color: rgba(255, 255, 255, 0.1);
+         }
+      }
+      .button{
+         width: 260px;
+         margin: 0 auto;
+         position: relative;
+         // border: 1px solid #FFF;
+         a{
+            color: #b8b6b4;
+            display: block;
+            border: 1px solid #b8b6b4;
+            height: 30px;
+            line-height: 30px;
+            font-size: 18px;
+            &:hover{
+               transition: .5s;
+               background-color: rgba(255, 255, 255, 0.1);
+            }
+         }
+         .love{
+            position: absolute;
+            top: 0;
+            left: 20px;
+            float: left;
+            width: 150px;
+            text-align: center;
+         }
+         .gitee{
+            position: absolute;
+            top: 0;
+            right: 20px;
+            text-align: center;
+            width: 55px;
+         }
+      }
+   }
+   .footer{
+      width: 70%;
+      margin: 0 auto;
+      height: 580px;
+      background-color: #eee;
+      position: relative;
+      .card-body{
+         position: absolute;
+         width: 300px;
+         float: left;
+         padding: 0 30px 30px 50px;
+         top: 50px;
+         border: #d2d2d2 1px solid;
+         .title{
+            text-align: center;
+            font-size: 30px;
+         }
+      }
+      .b1{
+         .line{
+            width: 70%;
+            border-top: 1px solid #d2d2d2;
+            margin: 30px auto 10px;
+            
+            .title{
+               width: 65%;
+               text-align: center;
+               margin: -16px auto 0;
+               background-color: #EEE;
+            }
+         }
+      }
+      .b2{
+         left: 50%;
+         margin-left: -150px;
+         fieldset{
+            border: none;
+            border-top: 1px solid #d2d2d2;
+            margin: 15px auto 10px;
+            width: 70%;
+            legend{
+               padding: 0 10px;
+               margin: 0 auto;
+            }
+         }
+      }
+      .b3{
+         right: 0;
+         .title{
+            i{
+               margin: 20px 0 10px;
+            }
+         }
+      }
+      >span{
+         position: absolute;
+         width: 100%;
+         font-size: 14px;
+         text-align: center;
+         border: solid 1px #d2d2d2;
+         line-height: 70px;
+      }
+      #sp1{
+         top: 300px;
+      }
+      #sp2{
+         bottom: 50px;
+      }
+   }
+}

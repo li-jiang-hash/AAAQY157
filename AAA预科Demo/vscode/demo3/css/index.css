@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+}
+body #demo {
+  background-color: #00ffff;
+}
+body #demo h1:first-of-type {
+  text-align: center;
+  background-color: #F00;
+  color: #ff5800;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #bfa;
+}
+body .content {
+  width: 500px;
+  margin: 0 auto;
+}
+body .content div {
+  border: 4px dashed;
+  border-color: #FFF #fff #F00 #FFF;
+  text-align: center;
+  font-size: 50px;
+}
+body .content div:nth-child(5) {
+  background-color: #F00;
+  background-image: linear-gradient(to bottom, #ff0500, #fff000);
+}
+body .AAA {
+  width: 600px;
+  height: 400px;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+body .AAA .img {
+  height: 28px;
+  background-image: url(../../chapter3/background/hrepeat.jpg);
+}
+body .AAA h1 {
+  margin: 0;
+  line-height: 372px;
+  align-items: center;
+  text-align: center;
+  color: #ff0000;
+  font-size: 50px;
+}
+body .proman {
+  width: 320px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #ffe4c4;
+}
+body .proman p {
+  margin: 0;
+  text-align: center;
+  line-height: 50px;
+  font-size: 26px;
+}
+body .proman .Color {
+  background-color: #00ffff;
+}
+body .class {
+  width: 250px;
+  margin: 0 auto;
+  border: 2px solid #F00;
+  padding: 50px;
+}
+body .class .div1 {
+  font-size: 36px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ffb6c1;
+  border: 3px solid #ff5800;
+}
+body .class p {
+  padding: 0 0 0 20px;
+}
+body .class p i {
+  color: #F00;
+  margin-right: 5px;
+}
+body .class p span {
+  border-bottom: 2px #858585 dashed;
+  padding-right: 60%;
+}

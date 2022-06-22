@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <form action="https://www.google.com/search">
+      <fieldset>
+        <legend>注册页面</legend>
+        昵称:<input type="text" name="q" /><br />
+        密码:<input type="password" name="password" /><br />
+        确认密码:<input type="password" name="password2" /><br />
+        邮箱:<input type="email" name="email" /><br />
+        电话:<input type="text" name="phone" /><br />
+        性别:<input type="radio" name="sex" />男 &nbsp;&nbsp;&nbsp;<input
+          type="radio"
+          name="sex"
+        />女
+        <input type="button" value="注册" />
+        <!-- <input type="button" value="登录" /> -->
+        <input type="submit" value="登录" />
+      </fieldset>
+    </form>
+    <h1>案例二</h1>
+    <form action="" method="post">
+      <fieldset>
+        <legend>账号信息</legend>
+        姓名：<input type="text" name="username" /><br />
+        账号：<input type="text" name="userID" /><br />
+        密码：<input type="password" name="password" /><br />
+        再次输入密码：<input type="password" name="password2" /><br />
+      </fieldset>
+      <input type="submit" />
+    </form>
+    <form action="" method="post">
+      <fieldset>
+        <legend>基本信息</legend>
+        性别:<input type="radio" name="sex" />男&nbsp;&nbsp;<input
+          type="radio"
+          name="sex"
+        />女<br />
+        爱好:<input type="checkbox" name="checkbox" />打篮球&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="checkbox" />踢足球&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="checkbox" />羽毛球&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="checkbox" />游泳<br />
+        民族:<br />
+        自我介绍:<textarea name="texts" rows="10" cols="60"></textarea>
+      </fieldset>
+    </form>
+    <form action="./aaa?12=" method="post">
+      <fieldset>
+        <legend>联系方式</legend>
+        电话号码:<input type="text" name="username" /><br />
+        邮箱:<input type="email" name="userID" /><br />
+        <!-- 住址<input type="password" list="sexlist" /><br /> -->
+        <!-- <datalist id="sexlist">
+            <option>男</option>
+            <option>女</option>
+         </datalist> -->
+        <label for="sex">城市:</label>
+        <select name="12" id="sex" multiple>
+          <option value="" disabled selected>---请选择---</option>
+          <option>郑州</option>
+          <option disabled>开封</option>
+          <option>洛阳</option>
+          <option>许昌</option>
+          <option>平顶山</option>
+          <option>南阳</option>
+          <option>漯河</option>
+          <option>三门峡</option>
+          <option>济源</option>
+          <option>周口</option>
+          <option>驻马店</option>
+          <option>信阳</option>
+          <option>商丘</option>
+          <option>新乡</option>
+          <option>濮阳</option>
+          <option>安阳</option>
+          <option>鹤壁</option>
+          <option>焦作</option>
+        </select>
+      </fieldset>
+      <input type="submit" />
+    </form>
+  </body>
+</html>
