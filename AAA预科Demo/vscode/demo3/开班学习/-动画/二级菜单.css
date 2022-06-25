@@ -23,7 +23,7 @@ body ul.box > li:hover {
   color: #FFFF;
 }
 body ul.box > li:hover > ul {
-  height: 120px;
+  height: 90px;
   transition: 3s 0.1s all cubic-bezier(0, 2, 1, -1.59);
 }
 body ul.box > li:hover > ul {
