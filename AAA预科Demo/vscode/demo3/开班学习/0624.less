@@ -2,11 +2,12 @@
 @image1-url: "./image/1.jpg";
 @image2-url: "./image/2.jpg";
 @value1: -100px;
-@value2: -200px;
+@value2x: -200px;
 @value1: 0;
 @x-min-w1: @value1;
-@x-min-w2: @value2;
-@x-min-w1: -100px;
+@x-min-w2: @value2x;
+@y-min-h1: @value1;
+@y-min-h2: @value2x;
 
 
 body {
@@ -26,28 +27,27 @@ body {
                }
 
                &:nth-child(2):hover {
-                  background-position: -100px 0;
+                  background-position: @x-min-w1 0;
                }
 
                &:nth-child(3):hover {
-                  background-position: -200px 0;
+                  background-position: @x-min-w2 0;
                }
-
             }
          }
 
          &:nth-child(2) {
             td {
                &:nth-child(1):hover {
-                  background-position: 0 -100px;
+                  background-position: 0 @y-min-h1;
                }
 
                &:nth-child(2):hover {
-                  background-position: -100px -100px;
+                  background-position: @x-min-w1 @y-min-h1;
                }
 
                &:nth-child(3):hover {
-                  background-position: -200px -100px;
+                  background-position: @x-min-w2 @y-min-h1;
                }
 
             }
@@ -56,15 +56,15 @@ body {
          &:nth-child(3) {
             td {
                &:nth-child(1):hover {
-                  background-position: 0 -200px;
+                  background-position: 0 @y-min-h2;
                }
 
                &:nth-child(2):hover {
-                  background-position: -100px -200px;
+                  background-position: @x-min-w1 @y-min-h2;
                }
 
                &:nth-child(3):hover {
-                  background-position: -200px -200px;
+                  background-position: @x-min-w2 @y-min-h2;
                }
 
             }
@@ -96,7 +96,7 @@ body {
 
       &:nth-child(4) {
          background-color: #BFA;
-         margin: 80px 0 0 80px;
+         margin: 80px 0 0 80px;      
       }
 
       &:hover {

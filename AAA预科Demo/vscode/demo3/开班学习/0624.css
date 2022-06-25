@@ -11,25 +11,25 @@ body table tr:nth-child(1) td:nth-child(1):hover {
   background-position: 0 0;
 }
 body table tr:nth-child(1) td:nth-child(2):hover {
-  background-position: -100px 0;
+  background-position: 0 0;
 }
 body table tr:nth-child(1) td:nth-child(3):hover {
   background-position: -200px 0;
 }
 body table tr:nth-child(2) td:nth-child(1):hover {
-  background-position: 0 -100px;
+  background-position: 0 0;
 }
 body table tr:nth-child(2) td:nth-child(2):hover {
-  background-position: -100px -100px;
+  background-position: 0 0;
 }
 body table tr:nth-child(2) td:nth-child(3):hover {
-  background-position: -200px -100px;
+  background-position: -200px 0;
 }
 body table tr:nth-child(3) td:nth-child(1):hover {
   background-position: 0 -200px;
 }
 body table tr:nth-child(3) td:nth-child(2):hover {
-  background-position: -100px -200px;
+  background-position: 0 -200px;
 }
 body table tr:nth-child(3) td:nth-child(3):hover {
   background-position: -200px -200px;
