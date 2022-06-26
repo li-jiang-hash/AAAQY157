@@ -66,8 +66,7 @@ body .content .user-content form table tbody tr td input {
   margin-top: 30px;
 }
 body .content .user-content form table tbody tr td input[id="key_code"] {
-  width: 11
-                              0px;
+  width: 110px;
 }
 body .content .user-content form table tbody tr td input[type="submit"] {
   height: 40px;
