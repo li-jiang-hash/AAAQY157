@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body {
+   background-color: #14212a;
+
+   form {
+      width: 1000px;
+      height: 600px;
+      background-color: #ffffff;
+      margin: 50px auto 0;
+      border-radius: 10px;
+
+      table {
+         width: 80%;
+         margin: 0 auto;
+
+         caption {
+            border-bottom: 2px solid #ff6700;
+            h3 {
+               float: left;
+            }
+
+            a {
+               float: right;
+               margin-top: 20px;
+               text-decoration: none;
+               color: #ff6700;
+            }
+
+            a:nth-child(3) {
+               margin-right: 30px;
+            }
+         }
+
+         tbody {
+            tr {
+               td {
+                  height: 80px;
+
+                  &:nth-child(1) {
+                     width: 100px;
+                     text-align: right;
+                  }
+
+                  &:nth-child(2) {
+                     width: 280px;
+                  }
+
+                  input {
+                     line-height: 30px;
+                     width: 260px;
+                     // font-size: 1px;
+                  }
+
+                  span {
+                     font-size: 14px;
+                     color: #cccccc;
+                  }
+               }
+
+               &:nth-child(5) {
+                  input {
+                     width: 137px;
+                     height: 36px;
+                  }
+
+                  img {
+                     margin-left: 20px;
+                     vertical-align: top;
+                  }
+               }
+
+               &:nth-child(6) {
+                     td {
+                        text-align: center;
+                        input{
+                           font-size: 22px;
+                           width: 440px;
+                           height: 45px;
+                           color: #FFF;
+                           background-color: #ff6700;
+                           border: none;
+                           font-weight: 700;
+                           cursor: pointer;
+                           border-radius: 5px;
+                           border: 1px solid #ff6700;
+                           &:hover {
+                              border: 2px solid #ccc;
+                           }
+                        }
+                     }
+               }
+            }
+         }
+      }
+   }
+}
