@@ -45,6 +45,11 @@ body form table tbody tr td input {
 body form table tbody tr td span {
   font-size: 14px;
   color: #cccccc;
+  font-weight: 600;
+  cursor: pointer;
+}
+body form table tbody tr td span:hover {
+  color: #ff6700;
 }
 body form table tbody tr:nth-child(5) input {
   width: 137px;
