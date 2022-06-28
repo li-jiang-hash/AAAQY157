@@ -22,6 +22,7 @@ html {
 
 body {
   margin: 0;
+  font-size: 14px;
 }
 
 /**
@@ -75,6 +76,7 @@ pre {
 
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 
 /**
@@ -347,9 +349,24 @@ template {
 [hidden] {
   display: none;
 }
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+/* 清除浮动塌陷 */
+.clear::after, .clear::before {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 
-
+/* 设置元素选中的样式 */
 *::selection{
   background: #ff5c00;
   color: #fff;

@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>demo</title>
-   <script src="./0627.js"></script>
-   <script>
-      alert("Hello World!")
-   </script>
-</head>
-<body>
-   <button onclick="alert('按钮事件触发了')">确认</button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+    <!-- <script src="./0627.js"></script> -->
+    <script>
+      var a = 1;
+      var b = 2;
+      if (++a > 2 || --b < 1) {
+        console.log("a大于b");
+      } else {
+        console.log("a小于b");
+      }
+      console.log(a, b);
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="alert('按钮事件触发了')">确认</button> -->
+  </body>
 </html>

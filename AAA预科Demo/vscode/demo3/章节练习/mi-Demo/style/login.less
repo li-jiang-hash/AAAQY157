@@ -1,5 +1,5 @@
 @charset 'UTF-8';
-
+@theme_color: #ff6700;
 body {
    background: #ffffff;
 
@@ -42,7 +42,7 @@ body {
                font-size: 20px;
                padding-bottom: 15px;
                margin-bottom: 30px;
-               border-bottom: 2px solid #ffa523;
+               border-bottom: 2px solid @theme_color;
 
                >span {
                   font-size: 13px;
@@ -54,7 +54,7 @@ body {
 
                   a {
                      text-decoration: none;
-                     color: #ff6700;
+                     color: @theme_color;
                      font-family: '华文新魏';
                      font-size: 14px;
                      font-weight: 800;
@@ -86,9 +86,9 @@ body {
                            &[type="submit"] {
                               height: 40px;
                               line-height: 40px;
-                              border: 1px solid #ff6700;
+                              border: 1px solid @theme_color;
                               border-radius: 5px;
-                              background-color: #ff6700;
+                              background-color: @theme_color;
                               font-size: 14px;
                               cursor: pointer;
                               width: 70%;

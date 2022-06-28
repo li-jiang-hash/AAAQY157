@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@theme_color: #ff6700;
 body {
    background-color: #14212a;
 
@@ -15,7 +15,7 @@ body {
          margin: 0 auto;
 
          caption {
-            border-bottom: 2px solid #ff6700;
+            border-bottom: 2px solid @theme_color;
             h3 {
                float: left;
             }
@@ -24,7 +24,7 @@ body {
                float: right;
                margin-top: 20px;
                text-decoration: none;
-               color: #ff6700;
+               color: @theme_color;
             }
 
             a:nth-child(3) {
@@ -57,7 +57,7 @@ body {
                      font-weight: 600;
                      cursor: pointer;
                      &:hover{
-                        color: #ff6700;
+                        color: @theme_color;
                      }
                   }
                }
@@ -82,12 +82,12 @@ body {
                            width: 440px;
                            height: 45px;
                            color: #FFF;
-                           background-color: #ff6700;
+                           background-color: @theme_color;
                            border: none;
                            font-weight: 700;
                            cursor: pointer;
                            border-radius: 5px;
-                           border: 1px solid #ff6700;
+                           border: 1px solid @theme_color;
                            &:hover {
                               border: 2px solid #ccc;
                            }
