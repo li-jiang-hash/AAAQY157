@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        console.log(this);
+        this.a = document.getElementById("box").innerHTML;
+      //   this.value = prompt("请输入你的成绩");
+        if (this.value >= 90) {
+          this.a = "恭喜你通过了";
+        } else {
+          this.a = "很遗憾，你没有通过";
+        }
+        document.getElementById("box").innerHTML = this.a;
+        console.log(this);
+
+        //第二讲
+
+        function ab() {
+          this.b = document.getElementById("Value1").value;
+          console.log(this.b);
+        }
+        document.getElementById("click").onclick = ab;
+
+
+         //第三讲,练习题
+         // this.c = prompt("请输入您的身高")
+         // this.d = prompt("请输入您的体重")
+         this.e = this.c - 105
+         console.log(this.e)
+         if(this.d > this.e){
+            console.log("有点胖，小鬼")
+            }else if(this.d == this.e){
+               console.log("标准体重,继续保持")
+            }else{
+               console.log("有点瘦，小鬼")
+            }
+         //第四讲，练习题
+         // this.f = prompt("请输入您的成绩")
+         let f
+            if(f>100 || f<0){
+               console.log("请输入正确的成绩")
+               }else{
+                  if(f>=90){
+                     console.log("恭喜你通过了")
+                  }else if(f>=80){
+                     console.log("你的成绩良好")
+                  }else if(f>=70){
+                     console.log("你的成绩不错")
+                  }else if(f>=60){
+                     console.log("你的成绩及格")
+                  }else if(f<60){
+                     console.log("你的成绩不及格")
+                  }
+               }
+         //第五讲，swiotch语句
+         // this.x = parseInt(prompt("第一个数字"))
+         // this.y = parseInt(prompt("第二个数字"))
+         // this.z = prompt("请输入运算符")
+            switch(this.z){
+               case "+":
+                  console.log(this.x+this.y)
+                  break;
+               case "-":
+                  console.log(this.x-this.y)
+                  break;
+               case "*":
+                  console.log(this.x*this.y)
+                  break;
+               case "/":
+                  console.log(this.x/this.y)
+                  break;
+            }
+            this.s = parseInt(prompt("请输入您要拨打电话的ID"))
+            switch(this.s){
+               case 1:
+                  console.log("拨爸爸的电话")
+                  break;
+               case 2:
+                  console.log("拨妈妈的电话")
+                  break;
+               case 3:
+                  console.log("拨爷爷的电话")
+                  break;
+               case 4:
+                  console.log("拨奶奶的电话")
+                  break;
+                  // default:
+                  //    console.log("输入数值无效。")
+            }
+
+      };
+    </script>
+  </head>
+  <body>
+    <div id="box">qY157</div>
+    <input type="text" id="Value1" value="" />
+    <input type="button" value="确认" id="click" />
+  </body>
+</html>
