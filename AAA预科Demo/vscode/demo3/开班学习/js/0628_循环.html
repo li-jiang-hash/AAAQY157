@@ -6,48 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      window.onload = function() {
-        //   var a = 1
-        //   var b = 0
-        //   while (a <= 100) {
-        //     b += a
-        //     a++
+      window.onload = function () {
+        //   var i = 1
+        //   var sum = 0
+        //   var max = -1
+        //   var min = 101
+        //   var score
+        //   while (i <= 5) {
+        //     // var score = parseFloat(prompt("请输入第" + i + "个学生的成绩"))
+        //     console.log("第" + i + "个学生成绩是:"+score)
+        //     i++
+        //     if (score >= 0 && score <= 100) {
+        //       sum += score
+        //       if (score > max) {
+        //         max = score
+        //       }
+        //       if (score < min) {
+        //         min = score
+        //       }
+        //     } else {
+        //       return alert("输入成绩不合法")
+        //     }
         //   }
-        //   console.log(b);
-
-        var i = 1
-        var sum = 0
-        var max = -1
-        var min = 101
-        while (i <= 5) {
-          var score = parseFloat(prompt("请输入第" + i + "个学生的成绩"))
-          i++
-          if (score >= 0 && score <= 100) {
-            sum += score
-            if (score > max) {
-              max = score
-            }
-            if (score < min) {
-              min = score
-            }
-          } else {
-            return alert("输入成绩不合法")
-          }
-        }
-        var avg = sum / 5
-        // document.getElementById("h1").innerHTML =
-        dic
-        document.getElementsByTagName("h1")[0].innerHTML =
-          "你的总成绩是:" +
-          sum +
-          "<br />平均成绩是:" +
-          avg +
-          "<br />最高成绩是:" +
-          max +
-          "<br />最低成绩是:" +
-          min
-        // document.write(
-        //   "你的总成绩是:" +
+        //   var avg = sum / 5
+        //   document.getElementsByTagName("h1")[0].innerHTML =
+        //     "你的总成绩是:" +
         //     sum +
         //     "<br />平均成绩是:" +
         //     avg +
@@ -55,7 +38,30 @@
         //     max +
         //     "<br />最低成绩是:" +
         //     min
-        // )
+        // 第三讲，do-while循环
+        // do{
+        //   alert("hello")
+        // }while(i<1)
+
+        for (var i = 1; i <= 5; i++) {
+          var score = parseFloat(prompt("请输入第" + i + "个学生的成绩"))
+          console.log(score);
+          if (score > 100 || score < 0) {
+            if (score >= 90) {
+              document.write("优秀")
+            } else if (score >= 80) {
+              document.write("良好")
+            } else if (score >= 70) {
+              document.write("中等")
+            } else if (score >= 60) {
+              document.write("及格")
+            } else {
+              document.write("不及格")
+            }
+          } else {
+            return alert("输入成绩不合法")
+          }
+        }
       }
     </script>
     <style>
@@ -68,10 +74,18 @@
         margin: 0 auto;
         box-shadow: 3px 5px 3px #ccc;
       }
+      h1:selection {
+        background-color: #ff6700;
+        color: #ffffff;
+        border-radius: 50%;
+        width: 70%;
+        margin: 0 auto;
+        box-shadow: 3px 5px 3px #ccc;
+      }
     </style>
   </head>
 
   <body>
-    <h1 id="h1"></h1>
+    <!-- <h1 id="h1"></h1> -->
   </body>
 </html>
