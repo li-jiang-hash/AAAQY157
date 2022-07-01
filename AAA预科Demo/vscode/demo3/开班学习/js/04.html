@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <script type="text/javascript">
+      //数组去重
+      var arr = [
+        10, 20, 30, 12, 10, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10,
+        20, 10, 30, 40, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40, 10, 50,
+        20, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40,
+        10, 50, 20, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10,
+        30, 40, 10, 20, 30,
+      ]
+      var arr2 = [10]
+      for (var i = 0; i < arr.length; i++) {
+        var flag = true
+        for (var j = 0; j < arr2.length; j++) {
+          console.log(arr2.length)
+          if (arr[i] === arr2[j]) {
+            //说明arr2中已经有该数据
+            //假设不成立
+            flag = false
+            break //没有比较的必要
+          }
+        }
+        if (flag) {
+          arr2.push(arr[i])
+          console.log(arr[i] + "该元素不存在")
+        } else {
+          console.log(arr[i] + "该元素已存在")
+        }
+      }
+      console.log(arr2)
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -21,22 +21,22 @@
       // 输出表格
 
 
-      // var rows = parseInt(prompt("请输入行数"))
-      // var cols = parseInt(prompt("请输入列数"))
-      // document.write('<table border="1" cellspacing="0" cellpadding="0" width='+rows+"00px " +'height='+cols+ "00px"+'>')
-      // for (var i = 0; i < rows; i++) {
-      //   document.write('<tr>')
-      //   for (var j = 0; j < cols; j++) {
-      //   var r=Math.round(Math.random()*255)
-      //   var g=Math.round(Math.random()*255)
-      //   var b=Math.round(Math.random()*255)
-      //   var a=Math.random().toFixed(1)
-      //    //  document.write('<td bgcolor=#'+r+g+b+'>' + '</td>')
-      //     document.write('<td style="background:rgba('+r+','+g+','+b+','+a+');">' + '</td>')
-      //   }
-      //   document.write('</tr>')
-      // }
-      // document.write('</table>')
+      var rows = parseInt(prompt("请输入行数"))
+      var cols = parseInt(prompt("请输入列数"))
+      document.write('<table border="1" cellspacing="0" cellpadding="0" width='+rows+"00px " +'height='+cols+ "00px"+'>')
+      for (var i = 0; i < rows; i++) {
+        document.write('<tr>')
+        for (var j = 0; j < cols; j++) {
+        var r=Math.round(Math.random()*255)
+        var g=Math.round(Math.random()*255)
+        var b=Math.round(Math.random()*255)
+        var a=Math.random().toFixed(1)
+         //  document.write('<td bgcolor=#'+r+g+b+'>' + '</td>')
+          document.write('<td style="background-color:rgba('+r+','+g+','+b+','+a+');">' + '</td>')
+        }
+        document.write('</tr>')
+      }
+      document.write('</table>')
 
       // 乘法口诀表
       // var num = parseInt(prompt("请输入一个数字"))
@@ -73,7 +73,6 @@
       //       console.log(c);
       //      document.write(i + "&nbsp;&nbsp;")
       //    }
-         
       // }
 
 
@@ -90,11 +89,11 @@
       // }
 
       // 4.打印100-200之间所有能被3或者7整除的数
-      for (var i = 100; i <= 200; i++) {
-        if (i % 3 == 0 || i % 7 == 0) {
-          document.write(i + "&nbsp;")
-        }
-      }
+      // for (var i = 100; i <= 200; i++) {
+      //   if (i % 3 == 0 || i % 7 == 0) {
+      //     document.write(i + "&nbsp;")
+      //   }
+      // }
     </script>
   </head>
   <body></body>

@@ -43,26 +43,59 @@
         //   alert("hello")
         // }while(i<1)
 
-        for (var i = 1; i <= 5; i++) {
-          var score = parseFloat(prompt("请输入第" + i + "个学生的成绩"))
-          console.log(score);
-          if (score > 100 || score < 0) {
-            if (score >= 90) {
-              document.write("优秀")
-            } else if (score >= 80) {
-              document.write("良好")
-            } else if (score >= 70) {
-              document.write("中等")
-            } else if (score >= 60) {
-              document.write("及格")
-            } else {
-              document.write("不及格")
-            }
+        // for (var i = 1; i <= 5; i++) {
+        //   var score = Number(prompt("请输入第" + i + "个学生的成绩"))
+        //   console.log(score);
+        //   if (score > 100 || score < 0) {
+        //     if (score >= 90) {
+        //       document.write("优秀")
+        //     } else if (score >= 80) {
+        //       document.write("良好")
+        //     } else if (score >= 70) {
+        //       document.write("中等")
+        //     } else if (score >= 60) {
+        //       document.write("及格")
+        //     } else {
+        //       document.write("不及格")
+        //     }
+        //   } else {
+        //     return alert("输入成绩不合法")
+        //   }
+        // }
+
+        for (let i = 1; i <= 5; i++) {
+          let num = Number(prompt("请输入一个判断的等级的数字"));
+          if (num < 1 || num > 5) {
+            return alert("输入的数字不合法");
           } else {
-            return alert("输入成绩不合法")
+            if (num.isNaN) {
+              return alert("输入正确的数字");
+            }
+
+            switch (num) {
+              case 1:
+                document.write("E级");
+                break;
+              case 2:
+                document.write("D级");
+                break;
+              case 3:
+                document.write("C级");
+                break;
+              case 4:
+                document.write("B级");
+                break;
+              case 5:
+                document.write("A级");
+                break;
+              default:
+                document.write("未知错误");
+                break;
+            }
           }
+          console.log(num);
         }
-      }
+      };
     </script>
     <style>
       h1 {
