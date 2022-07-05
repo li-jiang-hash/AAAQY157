@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            cursor: context-menu;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            let time = 600
+            let second = time
+            this.cltime = () => {
+                this.btn = document.getElementsByTagName("button")[0]
+                btn.disabled = true
+                btn.style.cursor = "not-allowed"
+                btn.innerHTML = "重新发送(" + second + ")"
+                second--
+                this.timer = setTimeout("cltime()", 100)
+                if (second < 0) {
+                    clearTimeout(this.timer)
+                    btn.disabled = false
+                    btn.innerHTML = "发送"
+                    btn.style.cursor = "pointer"
+                    second = time
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button onclick="window.cltime()">发送</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let bol = confirm("请做出选择")
+        if (bol){
+            alert("分手成功")
+        }else {
+            alert("分手失败")
+        }
+        this.op=()=>window.open("./0701.html")
+        this.cl=()=>window.close()
+        this.showSystemTime =() =>{
+            this.date = new Date();
+            this.div = document.getElementsByTagName('div')[0]
+            div.innerHTML = date.toLocaleString()
+            setTimeout("showSystemTime()",1000)
+        }
+        window.onload = window.showSystemTime
+    </script>
+</head>
+<body>
+<button onclick="op()">open</button>
+<button onclick="cl()">close</button>
+<div></div>
+</body>
+</html>

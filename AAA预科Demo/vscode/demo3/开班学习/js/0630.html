@@ -25,14 +25,14 @@
       //   for (let ji in scores) {
       //     // console.log(scores[ji])
       //   }
-        scores.map((item, i) => {
-          return item / 10, i + 1
-        })
-        scores.map((item, i) => {
-          item / 10, (i += scores[i])
-          console.log(item, i)
-        })
-        let str = scores.join("_")
+        // scores.map((item, i) => {
+        //   return item / 10, i + 1
+        // })
+        // scores.map((item, i) => {
+        //   item / 10, (i += scores[i])
+        //   console.log(item, i)
+        // })
+        // let str = scores.join("_")
       //   console.log(str, typeof str)
 
       // 	var a = [21, 32, 45, 23, 7, 37];
@@ -43,25 +43,38 @@
       // 	a.splice(1, 1, 14, 23, 21)
       // 	console.log(a)
 
-      // var arr = [
-      //   10, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40,
-      //   30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10,
-      //   20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10,
-      //   10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40,
-      // ]
-      // var arr2
-      // for (var i = 0; i < arr.length; i++) {
-      //   for (var j = i + 1; j < arr.length; j++) {
-      //     if (arr[i] == arr[j]) {
-      //       arr.splice(j, 1)
-      //       j--
-      //       // arr2.push(arr[i])
-      //     }
-      //   }
-      // }
+      var arr = [
+        10, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40,
+        30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10,
+        20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40, 10, 50, 20, 10,
+        10, 10, 20, 10, 30, 40, 10, 50, 20, 10, 10, 10, 20, 10, 30, 40,
+      ]
+      var arr2
+      for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+          if (arr[i] == arr[j]) {
+            arr.splice(j, 1)
+            j--
+            // arr2.push(arr[i])
+          }
+        }
+      }
 
-      // console.log(arr)
-      // console.log(arr2)
+      console.log(arr)
+      console.log(arr2)
+
+
+
+
+      
+      var arr = [4, 0, 7, 9, 0, 0, 0, 0, 0, 2, 6, 0, 3, 1, 0]
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == 0) {
+          arr.splice(i, 1)
+          i--
+        }
+      }
+      console.log(arr)
     </script>
   </head>
   <body></body>

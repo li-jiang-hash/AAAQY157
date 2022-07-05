@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>计算器</title>
+    <script>
+      window.onload = () => {
+        this.inputs = document.getElementsByTagName("input")
+        this.btns = document.getElementsByTagName("button")
+        function add(str) {
+          this.num1 = Number(this.inputs[1].value)
+          this.num2 = Number(this.inputs[2].value)
+          window.console.log(btns[1].innerText)
+          if (num1 == NaN && num2 == NaN) {
+            alert("输入数字不合法？")
+          }
+          switch (str) {
+            case "+":
+              this.result = this.num1 + this.num2
+              break
+            case "-":
+              this.result = this.num1 - this.num2
+              break
+            case "*":
+              this.result = this.num1 * this.num2
+              break
+            case "/":
+              this.result = this.num1 / this.num2
+              break
+          }
+          this.inputs[inputs.length - 1].value = this.result.toFixed(2)
+        }
+        btns[0].onclick = (str) => add(btns[0].innerText)
+        btns[1].onclick = () => add(btns[1].innerText)
+        btns[2].onclick = () => add(btns[2].innerText)
+        btns[3].onclick = () => add(btns[3].innerText)
+        inputs[3].onclick = () => add(inputs[3].value)
+        inputs[4].onclick = () => add(inputs[4].value)
+        inputs[5].onclick = () => add(inputs[5].value)
+        inputs[6].onclick = () => add(inputs[6].value)
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="请输入第一个数字" />
+    <input type="text" placeholder="请输入第二个数字" /><br />
+    <!-- <input type="button" value="+" onclick="add('+')" />
+    <input type="button" value="-" onclick="add('-')" />
+    <input type="button" value="*" onclick="add('*')" />
+    <input type="button" value="/" onclick="add('/')" /><br /> -->
+    <input type="button" value="+" />
+    <input type="button" value="-" />
+    <input type="button" value="*" />
+    <input type="button" value="/" /><br />
+    <button>+</button>
+    <button>-</button>
+    <button>*</button>
+    <button onclick="numbtn()">/</button><br />
+    <input type="text" readonly />
+    <input type="text" id="numa" />
+    <span id="resyk"></span>
+  </body>
+</html>
