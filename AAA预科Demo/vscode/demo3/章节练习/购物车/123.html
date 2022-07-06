@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+
+  <body>
+    <form action="2.html" method="post" onsubmit="return checkdata()">
+      <input id="phone" placeholder="请输入手机号" /><br />
+      <input id="username" placeholder="请输入用户名" /><br />
+      <input id="pwd" type="password" placeholder="请输入密码" /><br />
+      <input id="repwd" type="password" placeholder="确认密码" /><br />
+      <input type="submit" /><br />
+    </form>
+    <script type="text/javascript">
+      function $(select) {
+        return document.querySelector(select)
+      }
+
+      function checkdata() {
+        var phone = $("#phone").value
+        if (phone == "" || phone == null) {
+          alert("请输入手机号")
+          return false
+          console.log("aaa")
+        } else {
+          if (phone.length != 11) {
+            alert("请输入正确的手机号")
+            return false
+          } else {
+            return true
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

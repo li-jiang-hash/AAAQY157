@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>购物车</title>
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
     <script>
         window.onload = window =>{
             this.$ = selector => document.querySelector(selector)
@@ -16,17 +21,11 @@
                     .replace ("goodsNum",goodsNum)
                     .replace ("subTotal",goodsPrice*goodsNum)
                 let table=$("tbody")
-                table.innerHTML+=templte
-                console.log($)
+                table.innerHTML += templte
             }
             this.del = obj => obj.parentNode.parentNode.remove()
         }
     </script>
-    <style>
-        td{
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 <input type="text" placeholder="商品名称" id="goodsName" />
