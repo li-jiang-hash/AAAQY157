@@ -1,10 +1,54 @@
-window.onload = () => {
+;window.onload = () => {
    this.$ = selector => document.querySelector(selector)
    this.$all = selector => document.querySelectorAll(selector)
-   this.AllGoods=(goodsNum,a)=>{
+
+   //当页面加载完以后，初始化一些商品数据供选购
+   let goodsList=[
+        {goodsId:1,goodsName:"VIVOX200",goodsPrice:1999.0},
+        {goodsId:2,goodsName: "Iphone56",goodsPrice:7999.0},
+        {goodsId:3,goodsName:"HUAWEIP200",goodsPrice:8999.0},
+        {goodsId:4,goodsName:"HUAWEIMate40 pro",goodsPrice:6999.0}
+   ]
+   //让商品加载到商品列表中
+   ;(function onLoadInit () {
+      let templte2 = $("#templte2")
+      goodsList.forEach(goods => {
+         $("#goodsList").innerHTML += templte2.innerHTML
+           .replace("goodsId", goods.goodsId)
+           .replace("goodsName", goods.goodsName)
+           .replace("goodsPrice", goods.goodsPrice)
+      })
+   })()
+   //从商品列表添加购物车
+   this.AddGoodsFun = obj =>{
+      // let goodsId = obj.parentNode.parentNode.cells[0].innerHTML
+      let goodsName = obj.parentNode.parentNode.cells[1].innerHTML
+      console.log(goodsName)
+      let goodsPrice = Number(obj.parentNode.parentNode.cells[2].innerHTML)
+      // let btn = obj.parentNode.parentNode.cells[3].innerHTML
+      let templte = $("#templte").innerHTML
+        .replace("goodsName", goodsName)
+        .replace("goodsPrice", goodsPrice)
+        .replace("goodsNum",1)
+        .replace("subTotal", goodsPrice * 1)
+      let table = $("#goods")
+      table.innerHTML += templte
+
+
+
+
+
+   //   调用件数计算方法
+      AllGoods(1,'+')
+   }
+
+
+
+   //件数计算
+   this.AllGoods=(goodsNum,symbol)=>{
       let allGoods = $all(".as")
       console.log(allGoods)
-      switch (a){
+      switch (symbol){
          case '+':
             $('#goodsAllNum').innerHTML = Number($('#goodsAllNum').innerHTML) +Number(goodsNum)
             break
@@ -12,10 +56,12 @@ window.onload = () => {
             $('#goodsAllNum').innerHTML = Number($('#goodsAllNum').innerHTML) -Number(goodsNum)
             break
          default:
-            console.log("请检查计件的件数？")
+            console.log("请检查计件的件数操作符？")
       }
-         console.log(goodsNum)
+         // console.log(goodsNum)
    }
+
+   //加入购物车
    this.addCard = () => {
       let goodsNameFlag = false
       let goodsPriceFlag = false
@@ -45,7 +91,7 @@ window.onload = () => {
             .replace("goodsPrice", goodsPrice)
             .replace("goodsNum", goodsNum)
             .replace("subTotal", goodsPrice * goodsNum)
-         let table = $("tbody")
+         let table = $("#goods")
          table.innerHTML += templte
          $('#goodsName').value = ''
          $('#goodsPrice').value = ''
@@ -72,6 +118,7 @@ window.onload = () => {
             num--
             num < 1 ? num = 1 : num
             obj.nextElementSibling.value = num
+            AllGoods(1,"-")
             break;
          default:
             console.log("请检查运算符")
@@ -81,7 +128,20 @@ window.onload = () => {
       getTotal()
    }
    //操作-单个删除
-   this.del = obj => obj.parentNode.parentNode.remove() || getTotal() || AllGoods(obj.parentNode.parentNode.cells[3].childNodes[3].value, '-')
+   this.del = obj =>{
+
+      //干掉所在的tr
+      obj.parentNode.parentNode.remove()
+      //计算价格
+      getTotal()
+
+      AllGoods(obj.parentNode.parentNode.cells[3].childNodes[3].value, '-')
+
+      if($all('.goods').length == 0){
+         $("#checkAll").checked = false
+      }
+
+   }
 
 
    //全选
@@ -91,12 +151,12 @@ window.onload = () => {
       for (let i in goodsArr) goodsArr[i].checked = checkAll.checked
       getTotal()
    }
+   //取消全选
    this.clearAll = () => {
       let goodsArr = $all(".goods")
       let checkAll = $("#checkAll")
       let falg = true
-      for (let i = 0; i < goodsArr.length; i++)
-         if (!goodsArr[i].checked) falg = false
+      for (let i = 0; i < goodsArr.length; i++) if (!goodsArr[i].checked) falg = false
       checkAll.checked = falg
       getTotal()
    }
@@ -117,7 +177,13 @@ window.onload = () => {
       // }
       // if (i) {
       for (let i = 0; i < goodsArr.length; i++) {
-         if (goodsArr[i].checked) goodsArr[i].parentNode.parentNode.remove()
+         if (goodsArr[i].checked){
+            $("#checkAll").checked = false
+            goodsArr[i].parentNode.parentNode.remove()
+            $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) - Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
+            $("#goodsAllNum").innerHTML = Number($("#goodsAllNum").innerHTML) - Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
+         }
+
       }
       // }
       //调用价格运算方法
@@ -126,6 +192,8 @@ window.onload = () => {
 
    //   调用件数计算
       AllGoods()
+
+
    }
    //单价计算方法
    this.getTotal = () => {
@@ -134,8 +202,21 @@ window.onload = () => {
       var goodsArr = $all(".goods")
       for (var i = 0; i < goodsArr.length; i++){
          //获取所有的商品
-         if (goodsArr[i].checked) sum += Number(goodsArr[i].parentNode.parentNode.cells[4].innerHTML)
+         if (goodsArr[i].checked){
+            sum += Number(goodsArr[i].parentNode.parentNode.cells[4].innerHTML)
+            // $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) + Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
+
+            console.log(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
+         }else{
+            $("#selectGoodsNum").innerHTML = 0
+         }
       }
       $("#total").innerHTML = sum.toFixed(2)
+      if(sum!=0) {
+         $('.click-btn').style.backgroundColor = "#ff6700"
+         // console.log($('.click-btn').style.backgroundColor)
+      }else{
+         $('.click-btn').style.backgroundColor = "#f5f5f5"
+      }
    }
 }

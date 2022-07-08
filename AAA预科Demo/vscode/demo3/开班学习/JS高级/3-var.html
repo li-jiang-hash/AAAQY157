@@ -64,6 +64,29 @@
   p.setName('Bob')
   p['setAge'](23)
   console.log(p.name, p['age'])
+
+
+  console.log('-------------------')
+  /*
+  * 属性名有特殊字符
+  * 变量名不确定
+  *
+  * */
+
+
+  let pn= {}
+  // p.content-type = 'text/json'  //不能用
+
+  pn['content-type'] = 'text/json'
+  console.log(pn['content-type'])
+
+
+//  变量名不确定
+  let propName = 'MyAge'
+  let value1 = 18
+  // p.propName = value1  //不能用
+  pn[propName] = value1
+  console.log(pn[propName])
 </script>
 </body>
 </html>
