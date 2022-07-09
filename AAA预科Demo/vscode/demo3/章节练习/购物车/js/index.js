@@ -20,28 +20,56 @@
       })
    })()
    //从商品列表添加购物车
+   let cartArr = []
    this.AddGoodsFun = obj =>{
-      // let goodsId = obj.parentNode.parentNode.cells[0].innerHTML
+      let flag = true
+      let goodsId = obj.parentNode.parentNode.cells[0].innerHTML
       let goodsName = obj.parentNode.parentNode.cells[1].innerHTML
       console.log(goodsName)
       let goodsPrice = Number(obj.parentNode.parentNode.cells[2].innerHTML)
       // let btn = obj.parentNode.parentNode.cells[3].innerHTML
-      let templte = $("#templte").innerHTML
-        .replace("goodsName", goodsName)
-        .replace("goodsPrice", goodsPrice)
-        .replace("goodsNum",1)
-        .replace("subTotal", goodsPrice * 1)
-      let table = $("#goods")
-      table.innerHTML += templte
+      // let templte = $("#templte").innerHTML
+      //   .replace("goodsName", goodsName)
+      //   .replace("goodsPrice", goodsPrice)
+      //   .replace("goodsNum",1)
+      //   .replace("subTotal", goodsPrice * 1)
+      // let table = $("#goods")
+      // table.innerHTML += templte
+      console.log('cartArr',cartArr.length)
+      for(let i =0;i<cartArr.length;i++){
+         let goods = cartArr[i]
+         console.log('goods.goodsId',goods.goodsId)
+         if(goods.goodsId== goodsId){
+            goods.goodsNum++
+            console.log('goodsNum',goodsNum)
+            flag = false
+            break;
+         }
+      }
 
-
-
-
+      if(flag){
+         let goods = new Object()
+         goods.goodsId =goodsId
+         goods.goodsName =goodsName
+         goods.goodsPrice =goodsPrice
+         goods.goodsNum = 1
+         goods.subTotal = goodsPrice * 1
+         cartArr.push(goods)
+      }
+      $('#goods').innerHTML = ''
+         cartArr.forEach((goods)=>{
+            let teplte = $('#templte').innerHTML
+              .replace('goodsId',goods.goodsId)
+              .replace('goodsName',goods.goodsName)
+              .replace('goodsPrice',goods.goodsPrice)
+              .replace('goodsNum',goods.goodsNum)
+              .replace('subTotal',goods.subTotal)
+            $('#goods').innerHTML += teplte
+         })
 
    //   调用件数计算方法
       AllGoods(1,'+')
    }
-
 
 
    //件数计算
@@ -58,7 +86,7 @@
          default:
             console.log("请检查计件的件数操作符？")
       }
-         // console.log(goodsNum)
+      // console.log(goodsNum)
    }
 
    //加入购物车
@@ -108,17 +136,18 @@
       let num
       switch (opra) {
          case '+':
-            num = obj.previousElementSibling.value
+            num = obj.previousElementSibling.innerHTML
             num++
-            obj.previousElementSibling.value = num
+            obj.previousElementSibling.innerHTML = num
             AllGoods(1,"+")
+            // goodsNumSelect(this,'+')
             break;
          case '-':
-            num = obj.nextElementSibling.value
+            num = obj.nextElementSibling.innerHTML
             num--
-            num < 1 ? num = 1 : num
-            obj.nextElementSibling.value = num
-            AllGoods(1,"-")
+            num < 1 ? num = 1 : num && AllGoods(1,"-")
+            obj.nextElementSibling.innerHTML = num
+            // goodsNumSelect(this,'-')
             break;
          default:
             console.log("请检查运算符")
@@ -151,14 +180,15 @@
       for (let i in goodsArr) goodsArr[i].checked = checkAll.checked
       getTotal()
    }
-   //取消全选
-   this.clearAll = () => {
+   //取消全选                                                                                      ++++679/
+   this.clearAll = a => {
       let goodsArr = $all(".goods")
       let checkAll = $("#checkAll")
       let falg = true
       for (let i = 0; i < goodsArr.length; i++) if (!goodsArr[i].checked) falg = false
       checkAll.checked = falg
       getTotal()
+      // goodsNumSelect(a,'a')
    }
    //删除选中的
    this.delSelect = () => {
@@ -178,12 +208,17 @@
       // if (i) {
       for (let i = 0; i < goodsArr.length; i++) {
          if (goodsArr[i].checked){
+
             $("#checkAll").checked = false
             goodsArr[i].parentNode.parentNode.remove()
             $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) - Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
             $("#goodsAllNum").innerHTML = Number($("#goodsAllNum").innerHTML) - Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
+            let goodsId = goodsArr[i].value
+            for (var j = 0; j < cartArr.length; j++) {
+               cartArr.splice(j,1)
+               break
+            }
          }
-
       }
       // }
       //调用价格运算方法
@@ -204,9 +239,14 @@
          //获取所有的商品
          if (goodsArr[i].checked){
             sum += Number(goodsArr[i].parentNode.parentNode.cells[4].innerHTML)
-            // $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) + Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
 
-            console.log(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].value)
+            // if (bool){
+            //    $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) + Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].innerHTML)
+            //    console.log(Number($("#selectGoodsNum").innerHTML),Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].innerHTML))
+            // }else{
+            //    $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) + 1
+            //    console.log($("#selectGoodsNum").innerHTML)
+            // }
          }else{
             $("#selectGoodsNum").innerHTML = 0
          }
@@ -219,4 +259,30 @@
          $('.click-btn').style.backgroundColor = "#f5f5f5"
       }
    }
+
+
+   this.goodsNumSelect = (obj1,V) =>{
+      // if (bool){
+      //    $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) + Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].innerHTML)
+      //    console.log(Number($("#selectGoodsNum").innerHTML),Number(goodsArr[i].parentNode.parentNode.cells[3].childNodes[3].innerHTML))
+      // }else{
+      //    $("#selectGoodsNum").innerHTML = Number($("#selectGoodsNum").innerHTML) + 1
+      //    console.log($("#selectGoodsNum").innerHTML)
+      // }
+      if(V){
+
+      }
+      //选择视角的数量
+      if (obj1) goodsNum = obj1.parentNode.parentNode.cells[3].childNodes[3].innerHTML
+      console.log()
+      switch (V){
+         case  'a':
+            $("#selectGoodsNum").innerHTML = Number(goodsNum) + Number($("#selectGoodsNum").innerHTML)
+         case '+':
+            $("#selectGoodsNum").innerHTML = 1 + Number($("#selectGoodsNum").innerHTML)
+         case '-':
+            $("#selectGoodsNum").innerHTML = -1 + Number($("#selectGoodsNum").innerHTML)
+      }
+   }
+
 }

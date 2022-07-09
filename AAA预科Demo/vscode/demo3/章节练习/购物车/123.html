@@ -1,38 +1,50 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title></title>
-  </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>商品编号</th>
+    <th>商品名称</th>
+    <th>商品单价</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody id="goodsList">
+  </tbody>
+</table>
+<script id="a" type="text/html">
+  <tr>
+    <td><input type="checkbox" class="goods" onclick="clearAll(this)" />选择</td>
+    <td class="cl">goodsName</td>
+    <td>goodsPrice</td>
+    <td>
+      <button onclick="SetSubTotal(this)">-</button>
+      <span>goodsNum</span>
+      <button onclick="SetSubTotal(this)">+</button>
+    </td>
+    <td>subTotal</td>
+    <td><a href="#" class="btn btn-padding-2" onclick="del(this)">删除</a></td>
+  </tr>
+</script>
+<script type="text/javascript">
+  this.$ = s => document.querySelector(s)
+  let goodList = [
+    {goodsId:1,goodsName: '华为 Mate40 pro', goodsPrice: 69999.0},
+    {goodsId:1,goodsName: '华为 Mate30 pro', goodsPrice: 59999.0},
+    {goodsId:1,goodsName: '华为 Mate20 pro', goodsPrice: 39999.0}
+  ]
 
-  <body>
-    <form action="2.html" method="post" onsubmit="return checkdata()">
-      <input id="phone" placeholder="请输入手机号" /><br />
-      <input id="username" placeholder="请输入用户名" /><br />
-      <input id="pwd" type="password" placeholder="请输入密码" /><br />
-      <input id="repwd" type="password" placeholder="确认密码" /><br />
-      <input type="submit" /><br />
-    </form>
-    <script type="text/javascript">
-      function $(select) {
-        return document.querySelector(select)
-      }
-
-      function checkdata() {
-        var phone = $("#phone").value
-        if (phone == "" || phone == null) {
-          alert("请输入手机号")
-          return false
-          console.log("aaa")
-        } else {
-          if (phone.length != 11) {
-            alert("请输入正确的手机号")
-            return false
-          } else {
-            return true
-          }
-        }
-      }
-    </script>
-  </body>
+  function init() {
+    let a = $('#a').innerHTML
+    $
+  }
+</script>
+</body>
 </html>

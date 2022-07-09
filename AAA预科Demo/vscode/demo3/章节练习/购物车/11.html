@@ -1,75 +1,29 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<input placeholder="商品名称" id="mingcheng"/>
-		<input placeholder="单价" id="danjia"/>
-		<input placeholder="数量" id="shuliang"/>
-		<button onclick="gouwuche()">加入购物车</button>
-		<table border="1px" rules="all" width="500px">
-			<tr>
-				<th>商品名称</th>
-				<th>单价</th>
-				<th>数量</th>
-				<th>小计</th>
-				<th>操作</th>
-			</tr>
-		</table>
-<script id="moban" type="text/html">
-	<tr>
-		<td>mingcheng</td>
-		<td>danjia</td>
-		<td>
-			<button onclick="set(this)">-</button>
-			<input size="1" value="shuliang"/>
-			<button onclick="set(this)">+</button>
-		</td>
-		<td>xiaoji</td>
-		<td><button onclick="shanchu(this)">删除</button></td>
-	</tr>
-</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+</head>
+<body>
 <script type="text/javascript">
-	function $(s){
-		return document.querySelector(s)
-	}
-	function gouwuche(){
-		var mingcheng=$("#mingcheng").value
-		var danjia=$("#danjia").value
-		var shulaing=$("#shuliang").value
-		var moban=$("#moban").innerHTML
-					.replace("mingcheng",mingcheng)
-					.replace("danjia",danjia)
-					.replace("shuliang",shuliang)
-					.replace("xiaoji",danjia*shuliang)
-		var table=$("table")
-		table.innerHTML+=moban
-	}
-	function shanchu(obj){
-		if(confirm("是否删除？")){
-			obj.parentNode.parentNode.remove()
-		}
-	}
-	function set(obj){
-		var ysf=obj.innerHTML
-		var num;
-		switch(ysf){
-		    case "+":
-			num=obj.previousElementSibling.value
-			num++
-			obj.previousElementSibling.value=num;
-			break;
-			case "-":
-			num=obj.nextElementSibling.value
-			num--
-			if(num<=1)num=1
-			obj.nextElementSibling.value=num
-			break;
-		}
-		var price=obj.parentNode.previousElementSibling.innerHTML
-		obj.parentNode.nextElementSibling.innerHTML=price*num
-	}
+  // let a=[3,2,1]
+	// let b = [1,2,3]
+	// let c = a.every(Item => some(item||b))
+	// console.log(c)
+	console.log(1)
+	new Promise(function (resolve,reject) {
+		console.log(2)
+		resolve()
+	}).then((resolve)=>{
+		console.log(3)
+	},()=>{})
+	setTimeout(function () {
+		console.log(4)
+	},0)
+	console.log(5)
 </script>
+</body>
 </html>

@@ -62,12 +62,12 @@
   <!--  商品模板-->
   <script id="templte" type="text/html">
     <tr>
-      <td><input type="checkbox" class="goods" onclick="clearAll()" />选择</td>
+      <td><input value="goodsId" type="checkbox" class="goods" onclick="clearAll(this)" />选择</td>
       <td class="cl">goodsName</td>
       <td>goodsPrice</td>
       <td>
         <button onclick="SetSubTotal(this)">-</button>
-        <input style="width:20px;margin: 0" value="goodsNum" />
+        <span>goodsNum</span>
         <button onclick="SetSubTotal(this)">+</button>
       </td>
       <td>subTotal</td>
