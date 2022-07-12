@@ -19,6 +19,37 @@
   }
   let fun = new Fun()
   fun.test()
+
+
+
+
+  function Fn() {
+
+  }
+  // 每一个函数都有一个prototype，即显式原型
+  console.log(Fn.prototype)
+
+  let fn = new Fn()
+  console.log(fn.__proto__)
+  console.log(Fn.prototype === fn.__proto__)
+
+
+  console.log('--------------')
+  function Fn2() {
+    this.test1 = function () {
+      console.log('test1')
+    }
+  }
+  Fn2.prototype.test2 = function () {
+    console.log('test2')
+
+  }
+  let fn2 = new Fn2()
+  fn2.test1()
+  console.log(Object.prototype)
+  fn2.test2()
+  console.log(fn.toString())
+  // fn2.test3()
 </script>
 </body>
 </html>
