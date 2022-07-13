@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>正则</title>
+</head>
+<body>
+<textarea name="" id="content" cols="30" rows="10"></textarea>
+<button onclick="comment()">发表</button>
+<br />
+<span></span>
+<script type="text/javascript">
+  let arr = ['靠','逼','妈','操','智障','牛','傻']
+  function comment() {
+    let ctt = document.getElementById('content').value
+    let str = ctt.replace(new RegExp(arr.join('|'),'img'),"**")
+    document.getElementsByTagName('span')[0].innerText += str
+  }
+</script>
+</body>
+</html>

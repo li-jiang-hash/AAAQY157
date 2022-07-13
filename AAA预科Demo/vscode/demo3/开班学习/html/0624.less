@@ -1,0 +1,106 @@
+@charset 'UTF-8';
+@image1-url: "./image/1.jpg";
+@image2-url: "./image/2.jpg";
+@value1: -100px;
+@value2x: -200px;
+@value1: 0;
+@x-min-w1: @value1;
+@x-min-w2: @value2x;
+@y-min-h1: @value1;
+@y-min-h2: @value2x;
+
+
+body {
+   table {
+      background-image: url(@image1-url);
+      width: 300px;
+      height: 300px;
+      tr {
+         td {
+            background: url(@image2-url) 1000px 0 no-repeat;
+         }
+
+         &:nth-child(1) {
+            td {
+               &:nth-child(1):hover {
+                  background-position: 0 0;
+               }
+
+               &:nth-child(2):hover {
+                  background-position: @x-min-w1 0;
+               }
+
+               &:nth-child(3):hover {
+                  background-position: @x-min-w2 0;
+               }
+            }
+         }
+
+         &:nth-child(2) {
+            td {
+               &:nth-child(1):hover {
+                  background-position: 0 @y-min-h1;
+               }
+
+               &:nth-child(2):hover {
+                  background-position: @x-min-w1 @y-min-h1;
+               }
+
+               &:nth-child(3):hover {
+                  background-position: @x-min-w2 @y-min-h1;
+               }
+
+            }
+         }
+
+         &:nth-child(3) {
+            td {
+               &:nth-child(1):hover {
+                  background-position: 0 @y-min-h2;
+               }
+
+               &:nth-child(2):hover {
+                  background-position: @x-min-w1 @y-min-h2;
+               }
+
+               &:nth-child(3):hover {
+                  background-position: @x-min-w2 @y-min-h2;
+               }
+
+            }
+         }
+      }
+   }
+
+
+   div {
+      width: 300px;
+      height: 500px;
+      position: absolute;
+      margin-top: 400px;
+
+      &:nth-child(1) {
+         background-color: #f00;
+         margin: 10px 0 0 10px;
+      }
+
+      &:nth-child(2) {
+         background-color: #0f0;
+         margin: 40px 0 0 40px;
+      }
+
+      &:nth-child(3) {
+         background-color: #00f;
+         margin: 60px 0 0 60px;
+      }
+
+      &:nth-child(4) {
+         background-color: #BFA;
+         margin: 80px 0 0 80px;      
+      }
+
+      &:hover {
+         z-index: 1;
+      }
+   }
+}

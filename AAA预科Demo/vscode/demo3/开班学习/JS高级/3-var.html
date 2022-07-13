@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>var</title>
+</head>
+<body>
+<script type="text/javascript">
+  let obj1={name:'Tonm'}
+  let obj2=obj1
+  obj2.age = 12
+  console.log(obj1.age) //12
+  function fn(obj) {
+    obj.name = 'A'
+  }
+  fn(obj1)
+  console.log(obj2.name)   //A
+  let a = {age:12}
+  let b = a
+  a = {name: 'BOB', age: 13}
+  b.age = 14
+  console.log(b.age, a.name,a.age)  //13 BOB 12
+
+
+  function fn2(obj) {
+    obj = {age:15}
+  }
+  fn2(a)
+  console.log("--",a.age)
+
+  console.log('---------------------------------------')
+  let a3 = 3
+  function fn5(a) {
+    a = a + 1
+  }
+  fn5(a3)
+  console.log(a3)
+  function fn6(obj) {
+    console.log(obj.name)
+  }
+  let obj = {name: 'Tom'}
+  fn6(obj)
+
+
+  console.log('---------------------------------')
+  let p = {
+    name: 'Tom',
+    age:12,
+    // setName: (name) => {
+    //   this.name = name
+    // },
+    // setAge: (age) => {
+    //   this.age = age
+    // }
+    setName:function (name)  {
+      this.name = name
+    },
+    setAge:function (age) {
+      this.age = age
+    }
+  }
+  p.setName('Bob')
+  p['setAge'](23)
+  console.log(p.name, p['age'])
+
+
+  console.log('-------------------')
+  /*
+  * 属性名有特殊字符
+  * 变量名不确定
+  *
+  * */
+
+
+  let pn= {}
+  // p.content-type = 'text/json'  //不能用
+
+  pn['content-type'] = 'text/json'
+  console.log(pn['content-type'])
+
+
+//  变量名不确定
+  let propName = 'MyAge'
+  let value1 = 18
+  // p.propName = value1  //不能用
+  pn[propName] = value1
+  console.log(pn[propName])
+</script>
+</body>
+</html>

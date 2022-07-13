@@ -1,0 +1,17 @@
+body .box {
+  width: 1200px;
+  height: 50px;
+  margin: 300px auto;
+  border: 5px solid #AAA;
+  border-radius: 50px;
+  overflow: hidden;
+}
+body .box .nei {
+  height: 50px;
+  width: 10px;
+  transition: 1s 4s;
+  background: repeating-linear-gradient(45deg, yellow 10px, 20px, blue 20px, 20px, red 30px);
+}
+body .box .nei:hover {
+  width: 1200px;
+}

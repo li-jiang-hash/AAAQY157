@@ -1,0 +1,61 @@
+@charset 'UTF-8';
+body table {
+  background-image: url("image/1.jpg");
+  width: 300px;
+  height: 300px;
+}
+body table tr td {
+  background: url("image/2.jpg") 1000px 0 no-repeat;
+}
+body table tr:nth-child(1) td:nth-child(1):hover {
+  background-position: 0 0;
+}
+body table tr:nth-child(1) td:nth-child(2):hover {
+  background-position: 0 0;
+}
+body table tr:nth-child(1) td:nth-child(3):hover {
+  background-position: -200px 0;
+}
+body table tr:nth-child(2) td:nth-child(1):hover {
+  background-position: 0 0;
+}
+body table tr:nth-child(2) td:nth-child(2):hover {
+  background-position: 0 0;
+}
+body table tr:nth-child(2) td:nth-child(3):hover {
+  background-position: -200px 0;
+}
+body table tr:nth-child(3) td:nth-child(1):hover {
+  background-position: 0 -200px;
+}
+body table tr:nth-child(3) td:nth-child(2):hover {
+  background-position: 0 -200px;
+}
+body table tr:nth-child(3) td:nth-child(3):hover {
+  background-position: -200px -200px;
+}
+body div {
+  width: 300px;
+  height: 500px;
+  position: absolute;
+  margin-top: 400px;
+}
+body div:nth-child(1) {
+  background-color: #f00;
+  margin: 10px 0 0 10px;
+}
+body div:nth-child(2) {
+  background-color: #0f0;
+  margin: 40px 0 0 40px;
+}
+body div:nth-child(3) {
+  background-color: #00f;
+  margin: 60px 0 0 60px;
+}
+body div:nth-child(4) {
+  background-color: #BFA;
+  margin: 80px 0 0 80px;
+}
+body div:hover {
+  z-index: 1;
+}

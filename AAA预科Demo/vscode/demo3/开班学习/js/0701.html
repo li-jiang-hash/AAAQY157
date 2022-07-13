@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+      }
+    </style>
+    <script>
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <button>切换颜色</button>
+  </body>
+  <script>
+    this.arr = ["red","blue","green","yellow","pink","orange","purple","brown","black","white",]
+    this.i = 1
+    function changColor() {
+      this.divs = document.getElementsByTagName("div")
+      //  this.i++
+      //  if(this.i > this.arr.length) {
+      //    this.i = 0
+      //  }
+      this.ran = Math.floor(Math.random() * arr.length + 1)
+      this.divs[0].style.backgroundColor = arr[this.ran]
+      console.log(this);
+    }
+    document.getElementsByTagName("button")[0].onclick = changColor
+  </script>
+</html>

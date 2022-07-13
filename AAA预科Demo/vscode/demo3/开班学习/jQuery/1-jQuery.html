@@ -1,0 +1,85 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+  <script type="text/javascript" src="./.js/jquery-3.4.1.min.js"></script>
+<!--  <style>-->
+<!--    *::selection-->
+<!--  </style>-->
+  <script type="text/javascript">
+    $(() =>{
+      console.log(this)
+      // console.log($("div").html())
+      $('[id]').each(function () {
+        console.log($(this))
+      })
+      $('table tr:even').css('background-color','#bfa')
+      $('table tr td').css({textAlign:'center',borderRadius:'10px'})
+      $('table tr:odd').css('background-color','#bff')
+      $('table tr:first').css({backgroundColor: '#F00',color:'#fff'})
+      // $('*').css({backgroundColor: "#BFA",color: '#f00'})
+    })
+  </script>
+</head>
+<body>
+<div >你好</div>
+<ul>
+  <li id="study">学生管理</li>
+  <ul>
+    <li id="unStudy">学生添加</li>
+    <li>学生删除</li>
+    <li>学生修改</li>
+  </ul>
+  <input type="text" id="username"name="username" />
+  <input type="text" id="pwd" name="password" />
+  <input type="text" id="repwd" name="rePassword" />
+  <input type="submit" id="submit" name="submit" />
+</ul>
+<table width="500" border="1" rules="all">
+  <tr>
+    <td>姓名</td>
+    <td>性别</td>
+    <td>年龄</td>
+  </tr>
+  <tr>
+    <td>经典张三</td>
+    <td>男</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>经典张三</td>
+    <td>男</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>经典张三</td>
+    <td>男</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>经典张三</td>
+    <td>男</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>经典张三</td>
+    <td>男</td>
+    <td>18</td>
+  </tr>
+  <tr>
+    <td>经典张三</td>
+    <td>男</td>
+    <td>18</td>
+  </tr>
+</table>
+<div id="demom3">
+  <div>hello</div>
+  <div>hello,world</div>
+  <div>hi</div>
+  <div></div>
+</div>
+</body>
+</html>

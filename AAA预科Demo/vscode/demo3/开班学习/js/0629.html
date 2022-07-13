@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // i=1
+      // for(;;){
+      //    // console.log(i++);
+      // }
+      // var sum = 0
+      // for (var i = 1; i <= 100; i++) {
+      //   if (i % 2 == 0) {
+      //     // continue
+      //     sum += i
+      //   }
+      // }
+      // document.write(sum)
+      // 输出表格
+
+
+      var rows = parseInt(prompt("请输入行数"))
+      var cols = parseInt(prompt("请输入列数"))
+      document.write('<table border="1" cellspacing="0" cellpadding="0" width='+rows+"00px " +'height='+cols+ "00px"+'>')
+      for (var i = 0; i < rows; i++) {
+        document.write('<tr>')
+        for (var j = 0; j < cols; j++) {
+        var r=Math.round(Math.random()*255)
+        var g=Math.round(Math.random()*255)
+        var b=Math.round(Math.random()*255)
+        var a=Math.random().toFixed(1)
+         //  document.write('<td bgcolor=#'+r+g+b+'>' + '</td>')
+          document.write('<td style="background-color:rgba('+r+','+g+','+b+','+a+');">' + '</td>')
+        }
+        document.write('</tr>')
+      }
+      document.write('</table>')
+
+      // 乘法口诀表
+      // var num = parseInt(prompt("请输入一个数字"))
+      // for(var i=1;i<=num;i++){
+      //   for(var j=1;j<=num;j++){
+      //    document.write(i+"&nbsp;X&nbsp;"+j+"="+i*j+"&nbsp;")
+      //   }
+      //    document.write("<br />")
+      // }
+
+      //金字塔
+      // var num = parseInt(prompt("请输入一个数字"))
+      // for (var i = 0; i <= num; i++) {
+      //   for (var n = num - i; n > 0; n--) {
+      //     document.write("&nbsp;&nbsp;&nbsp;")
+      //   }
+      //   for (var j = 1; j <= i; j++) {
+      //     document.write(j + "&nbsp;")
+      //   }
+      //   for (var k = i - 1; k > 0; k--) {
+      //     document.write(k + "&nbsp;")
+      //   }
+      //   document.write("<br />")
+      // }
+
+
+
+      // 水仙花数
+      // for (let i = 100; i < 1000; i++) {
+      //    let a = i % 10 //个位数
+      //    let b = parseInt(i / 10) % 10 //十位数
+      //    let c = parseInt(i / 100) //百位数
+      //    if (i == a * a * a + b * b * b + c * c * c) {
+      //       console.log(c);
+      //      document.write(i + "&nbsp;&nbsp;")
+      //    }
+      // }
+
+
+      // 闰年计算
+      // let n = 0
+      // for (var i = 1000; i <= 2000; i++) {
+      //   if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
+      //     document.write(i + "&nbsp;")
+      //     n++
+      //     if(n%4==0){
+      //       document.write("<br />")
+      //     }
+      //   }
+      // }
+
+      // 4.打印100-200之间所有能被3或者7整除的数
+      // for (var i = 100; i <= 200; i++) {
+      //   if (i % 3 == 0 || i % 7 == 0) {
+      //     document.write(i + "&nbsp;")
+      //   }
+      // }
+    </script>
+  </head>
+  <body></body>
+</html>

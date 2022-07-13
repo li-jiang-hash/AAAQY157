@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: #bfa;
+        cursor: not-allowed;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        let tim = 9000
+        let second = tim
+        this.cltime = () => {
+          this.btn = document.getElementsByTagName("button")[0]
+          this.inp = document.getElementsByTagName("input")[0]
+          btn.disabled = true
+          btn.style.cursor = "not-allowed"
+          btn.innerHTML = "重新发送(" + second + ")"
+          second--
+          this.timer = setTimeout("cltime()", 1)
+          if (second < 0) {
+            clearTimeout(this.timer)
+            btn.disabled = false
+            btn.innerHTML = "发送"
+            btn.style.cursor = "pointer"
+            second = tim
+          }
+        }
+        window.onkeydown = function (event) {
+          console.log("onkeydown：" + event.keyCode)
+        }
+        window.onkeyup = function (event) {
+          console.log("onkeyup:" + event.keyCode)
+        }
+        window.onmousemove = (event) =>{
+          document.getElementsByTagName("dev")[0]
+          let x = event.clientX
+          let y = event.clientY
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" />
+    <button onclick="window.cltime()">发送</button>
+  <div></div>
+  </body>
+</html>

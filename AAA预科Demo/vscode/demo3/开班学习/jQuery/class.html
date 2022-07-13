@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+  <style>
+    .test{
+      width: 100px;
+      height: 100px;
+      background-color: #bfa;
+      line-height: 100px;
+      font-size: 36px;
+    }
+    .test2{
+      border-radius: 50%;
+      color: #f00;
+      background-color: #00F;
+      cursor: pointer;
+      line-height: 100px;
+      font-size: 36px;
+    }
+  </style>
+  <script type="text/javascript" src="./.js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    $(()=>{
+      $('div').addClass('test')
+      $('button:first').click( () => {
+        $('div').removeClass('test')
+        console.log(this)
+      })
+      $('button:last').click(function (){
+        $('div').toggleClass('test2')
+        console.log($(this).html())
+      })
+      $('button:eq(1)').click(function (){
+        $('div').toggleClass('test')
+      })
+      $('*').css({padding:'0',margin:'0'})
+      
+    })
+  </script>
+</head>
+<body>
+<div>div</div>
+<button>移除</button>
+<button>切换</button>
+<button>toggle</button>
+</body>
+</html>

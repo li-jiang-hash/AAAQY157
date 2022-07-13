@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>数据类型</title>
+</head>
+<body>
+<script>
+    a = 'aaa'
+    console.log(typeof a ==='string')
+    let b1 = {
+        b2:[1,'abc',console.log,window.alert,document.write],
+        b3: function () {
+            console.log('b3')
+            return function (){
+                return 'aaa'
+            }
+        }
+    }
+    console.log(b1 instanceof Object, b1 instanceof Array)   //true   false
+    console.log(b1.b2 instanceof Array, b1.b2 instanceof Object)
+    console.log(b1.b3 instanceof Function, b1.b3 instanceof Object)
+
+    // console.log(b1.b2 typeof)
+
+    console.log(typeof b1.b3 === 'function')
+    console.log(typeof b1.b2[2] === 'function')
+    b1.b2[2]('你好，你能看懂我吗？')
+    b1.b2[2](b1.b2)
+    // b1.b2[4]('我又是咋回事呢？')
+
+    console.log(b1.b3()())
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        //   var i = 1
+        //   var sum = 0
+        //   var max = -1
+        //   var min = 101
+        //   var score
+        //   while (i <= 5) {
+        //     // var score = parseFloat(prompt("请输入第" + i + "个学生的成绩"))
+        //     console.log("第" + i + "个学生成绩是:"+score)
+        //     i++
+        //     if (score >= 0 && score <= 100) {
+        //       sum += score
+        //       if (score > max) {
+        //         max = score
+        //       }
+        //       if (score < min) {
+        //         min = score
+        //       }
+        //     } else {
+        //       return alert("输入成绩不合法")
+        //     }
+        //   }
+        //   var avg = sum / 5
+        //   document.getElementsByTagName("h1")[0].innerHTML =
+        //     "你的总成绩是:" +
+        //     sum +
+        //     "<br />平均成绩是:" +
+        //     avg +
+        //     "<br />最高成绩是:" +
+        //     max +
+        //     "<br />最低成绩是:" +
+        //     min
+        // 第三讲，do-while循环
+        // do{
+        //   alert("hello")
+        // }while(i<1)
+
+        // for (var i = 1; i <= 5; i++) {
+        //   var score = Number(prompt("请输入第" + i + "个学生的成绩"))
+        //   console.log(score);
+        //   if (score > 100 || score < 0) {
+        //     if (score >= 90) {
+        //       document.write("优秀")
+        //     } else if (score >= 80) {
+        //       document.write("良好")
+        //     } else if (score >= 70) {
+        //       document.write("中等")
+        //     } else if (score >= 60) {
+        //       document.write("及格")
+        //     } else {
+        //       document.write("不及格")
+        //     }
+        //   } else {
+        //     return alert("输入成绩不合法")
+        //   }
+        // }
+
+        for (let i = 1; i <= 5; i++) {
+          let num = Number(prompt("请输入一个判断的等级的数字"));
+          if (num < 1 || num > 5) {
+            return alert("输入的数字不合法");
+          } else {
+            if (num.isNaN) {
+              return alert("输入正确的数字");
+            }
+
+            switch (num) {
+              case 1:
+                document.write("E级");
+                break;
+              case 2:
+                document.write("D级");
+                break;
+              case 3:
+                document.write("C级");
+                break;
+              case 4:
+                document.write("B级");
+                break;
+              case 5:
+                document.write("A级");
+                break;
+              default:
+                document.write("未知错误");
+                break;
+            }
+          }
+          console.log(num);
+        }
+      };
+    </script>
+    <style>
+      h1 {
+        text-align: center;
+        background-color: #ff6700;
+        color: #ffffff;
+        border-radius: 50%;
+        width: 70%;
+        margin: 0 auto;
+        box-shadow: 3px 5px 3px #ccc;
+      }
+      h1:selection {
+        background-color: #ff6700;
+        color: #ffffff;
+        border-radius: 50%;
+        width: 70%;
+        margin: 0 auto;
+        box-shadow: 3px 5px 3px #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1 id="h1"></h1> -->
+  </body>
+</html>

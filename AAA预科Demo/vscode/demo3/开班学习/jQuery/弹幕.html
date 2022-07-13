@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>弹幕</title>
+  <script type="text/javascript" src="./.js/jquery-3.4.1.min.js"></script>
+  <style>
+    #box{
+      margin: 100px auto 0;
+      width: 1000px;
+      height: 600px;
+      border: 1px solid #000;
+      position: relative;
+      overflow: hidden;
+    }
+    span{
+      position: absolute;
+      background-color: #bfa;
+    }
+    #content{
+      width: 10000px;
+      height: 600px;
+      position: relative;
+      font-size: 0;
+    }
+    #content img{
+      width: 1000px;
+      height: 600px;
+    }
+  </style>
+  <script type="text/javascript">
+    $(()=>{
+      // $('button').click(()=>{
+      //   let width = $('#box').width()
+      //   let height = $('#box').height()
+      //   let ranHeight = parseInt(Math.random() * height + 1)
+      //   $('<span></span>')
+      //     .text($('#comment').val())
+      //     .offset({top: ranHeight,left: width})
+      //     .animate({left:'-'+width+'px'},8000,'linear')
+      //     .appendTo($('#box'))
+      // })
+
+      setInterval(function (){
+        $('#content').animate({left:'-=1000px'},2000,function () {
+          $(this).css('left',0)
+          $(this).children().eq(0).remove().clone(true).appendTo($(this))
+          // console.log(this)
+        })
+      },3000)
+    })
+  </script>
+</head>
+<body>
+<div id="box">
+  <div id="content">
+    <img src="./img/1.jpg" alt="" />
+    <img src="./img/2.jpg" alt="" />
+    <img src="./img/3.jpg" alt="" />
+    <img src="./img/4.jpg" alt="" />
+    <img src="./img/5.jpg" alt="" />
+  </div>
+</div>
+<input type="text" id="comment" />
+<button>发表</button>
+</body>
+</html>
