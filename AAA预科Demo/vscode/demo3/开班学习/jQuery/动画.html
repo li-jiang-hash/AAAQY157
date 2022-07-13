@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画</title>
+  <style>
+    div{
+      width: 200px;
+      height: 400px;
+      background-color: #bfa;
+    }
+  </style>
+  <script type="text/javascript" src="./.js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    $(()=>{
+
+      $('button:eq(0)').click(()=>{
+        $('div').show(2000,'linear')
+      })
+      $('button:eq(1)').click(()=>{
+        $('div').hide(2000,'linear')
+      })
+      $('button:eq(2)').click(()=>{
+        $('div').toggle(2000,'linear')
+      })
+      $('button:eq(3)').click(()=>{
+        $('div').slideDown(2000,'linear')
+      })
+      $('button:eq(4)').click(()=>{
+        $('div').slideUp(2000,'linear')
+      })
+      $('button:eq(5)').click(()=>{
+        $('div').slideToggle(2000,'linear')
+      })
+      $('button:eq(6)').click(()=>{
+        $('div').fadeIn(2000,'linear')
+      })
+      $('button:eq(7)').click(()=>{
+        $('div').fadeOut(2000,'linear')
+      })
+      $('button:eq(8)').click(()=>{
+        $('div').fadeToggle(2000,'linear')
+      })
+      $('input').click(function (){
+        $('div').fadeTo(2000,$(this).val())
+      })
+      // $('input:eq(1)').click(function (){
+      //   $('div').fadeTo(2000,$(this).val())
+      // })
+      // $('input:eq(2)').click(function (){
+      //   $('div').fadeTo(2000,$(this).val())
+      // })
+      // $('input:eq(3)').click(function (){
+      //   $('div').fadeTo(2000,$(this).val())
+      // })
+      // $('input:eq(4)').click(function (){
+      //   $('div').fadeTo(2000,$(this).val())
+      // })
+    })
+  </script>
+</head>
+<body>
+<div></div>
+<div id="box">
+
+</div>
+<button>show</button>
+<button>hide</button>
+<button>toggle</button>
+<button>slideDown</button>
+<button>slideUp</button>
+<button>slideToggle</button>
+<button>fadeIn</button>
+<button>fadeOut</button>
+<button>fadeToggle</button>
+<br>
+<input type="radio" value="0" name="fade" />0%
+<input type="radio" value="0.25" name="fade" />25%
+<input type="radio" value="0.5" name="fade" />50%
+<input type="radio" value="0.75" name="fade" />75%
+<input type="radio" value="1" name="fade" />100%
+</body>
+</html>

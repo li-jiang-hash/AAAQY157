@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <script type="text/javascript" src="./.js/jquery-3.4.1.min.js"></script>
+
+    <style>
+        *::selection{
+            background-color: #bfa;
+            color: red;
+        }
+    </style>
+    <!--    初始化显示-->
+    <script type="text/javascript">
+      $(()=>{
+          $('table').css({margin: '0 auto'})
+          $('table[width="500"] tbody tr:odd').css({backgroundColor:'#ff6700'})
+          $('table[width="500"] tbody tr:even').css({backgroundColor:'#f0e000'})
+          $('tr:first').css({backgroundColor:'#ff1f1f'})
+          $('table[width="500"] caption').css({fontSize: '36px',color:'#f00',backgroundColor:'#0f0',borderTopLeftRadius:'40px',borderTopRightRadius:'40px'})
+          $('table[width="600"] caption').css({fontSize: '36px',color:'#f00',backgroundColor:'#00f',borderTopLeftRadius:'40px',borderTopRightRadius:'50px'})
+          $('table[width="600"]').css({marginTop: '50px'})
+          this.Style= () => {
+              $('td').css({textAlign:'center'})
+              $('table[width="600"] tbody tr:even').css({backgroundColor: '#f0d3ca'})
+              $('table[width="600"] tbody tr:odd').css({backgroundColor: '#acdb52'})
+              $('table[width="600"] thead').css({backgroundColor: '#0da'})
+              $('table[width="600"] thead').css({backgroundColor: '#0da'})
+
+          }
+          let goodsList = [
+                {'goodsId':1,'goodsName':'HUAWEI Mate40Pro','goodsPrice':6999.99},
+                {'goodsId':2,'goodsName':'OPPO Reno2','goodsPrice':2999.99},
+                {'goodsId':3,'goodsName':'HUAWEI P40Pro','goodsPrice':6599.99},
+                {'goodsId':4,'goodsName':'OPPO R11 PLUS','goodsPrice':2999.99},
+            ]
+          ;(function loading() {
+              goodsList.forEach(function (goods) {
+                  let tr=`<tr>
+                            <td>`+goods.goodsId+`</td>
+                            <td>`+goods.goodsName+`</td>
+                            <td>`+goods.goodsPrice+`</td>
+                            <td><a href="#" class="add">加入购物车</a></td>
+                          </tr>`
+                  $('#goodsList').append(tr)
+              })
+          })()
+          Style()
+      })
+    </script>
+</head>
+<body>
+<table border="1" rules="all" width="500">
+    <caption>商品列表</caption>
+    <thead>
+        <tr>
+            <th>商品编号</th>
+            <th>商品名称</th>
+            <th>商品单价</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="goodsList"></tbody>
+</table>
+
+<table border="1" rules="all" width="600" style="margin-top: 10px">
+    <caption>购物车</caption>
+    <thead>
+    <tr>
+        <th><input type="checkbox" id="checkAll" value=""/>全选</th>
+        <th>商品名称</th>
+        <th>商品单价</th>
+        <th>商品数量</th>
+        <th>小计</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="cart"></tbody>
+    <tfoot>
+    <tr>
+        <td colspan="2">
+            <span>总价:<span id="result" style="margin-left: 10px">0.00</span></span>
+        </td>
+        <td colspan="4">
+            <button class="delSelect">删除选中的商品</button>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+<!--事件处理-->
+<script type="text/javascript">
+    let cartArr = []
+    // 添加
+    $("#goodsList").on("click",".add",function(){
+        let goodsId=$(this).parent().siblings().first().text()
+        let flag=true;
+        for(let i=0;i<cartArr.length;i++){
+            if(cartArr[i].goodsId==goodsId){
+                cartArr[i].goodsNum++;
+                cartArr[i].subTotal=(cartArr[i].goodsNum*cartArr[i].goodsPrice).toFixed(2)
+                flag=false;
+                break;
+            }
+        }
+        if(flag){
+            let goods=new Object();
+            goods.goodsId=goodsId
+            goods.goodsName=$(this).parent().siblings().eq(1).text()
+            goods.goodsPrice=$(this).parent().siblings().eq(2).text()
+            goods.goodsNum=1;
+            goods.subTotal= (goods.goodsPrice * goods.goodsNum).toFixed(2)
+            cartArr.push(goods);
+        }
+        $("#cart").empty()
+        cartArr.forEach(function(goods){
+            let tr=`<tr>
+                      <td><input type='checkbox' onclick='total()' class='goods' value='`+goods.goodsId+`'/></td>
+                      <td>`+goods.goodsName+`</td>
+                      <td>`+goods.goodsPrice+`</td>
+                      <td><input type='button' value='-'/><input size='2' value='`+goods.goodsNum+`'/><input type='button' value='+'/></td>
+                      <td>`+goods.subTotal+`</td>
+                      <td><a href='#' class='del' >删除</a></td>
+                     </tr>`
+            $("#cart").append(tr)
+        })
+        //调用样式使得购物车中的样式改变
+        Style()
+    })
+    //删除
+    $("#cart").on("click",".del",function() {
+        $(this).parent().parent().remove()
+        let goodsId=$(this).parent().parent().find(":checkbox").val()
+        for(let i=0;i<cartArr.length;i++){
+            if(cartArr[i].goodsId==goodsId){
+                cartArr.splice(i,1);
+                break;
+            }
+        }
+        if (cartArr.length == 0) {
+            $("#checkAll").prop('checked',false)
+        }
+        //调用总价计算
+        total()
+    })
+    //    +/-
+    $('#cart').on('click',':button',function () {
+      let num = $(this).parent().children(':text').val()
+        // console.log(num)
+        switch ($(this).val()){
+            case '+':
+                num++
+            break
+            case '-':
+                num--
+              num = num<1?num=1 : num
+            break
+        }
+        let goodsId = $(this).parent().parent().find(':checkbox').val()
+        for (let i = 0; i < cartArr.length; i++) {
+            if (cartArr[i].goodsId==goodsId){
+                cartArr[i].goodsNum = num
+                break
+            }
+        }
+        $(this).parent().children(':text').val(num)
+        var price=$(this).parent().prev().text()
+        $(this).parent().next().text((num*price).toFixed(2))
+        total()
+    })
+    //计算总价
+    let total =()=>{
+        let sum=0;
+        $(".goods").each(function(){
+            if($(this).prop("checked")){
+                sum=sum+Number($(this).parent().parent().children().eq(4).text())
+            }
+            if($('.goods:checked').length==$('.goods').length){
+                $('#checkAll').prop('checked',true)
+            }else{
+                $('#checkAll').prop('checked',false)
+            }
+        })
+        $("#result").text(sum.toFixed(2))
+
+    }
+    //checkAll
+    $("#checkAll").click(function(){
+        var checkAll=$("#checkAll").prop("checked")
+
+        $(".goods").each(function(){
+            $(this).prop("checked",checkAll)
+        })
+        total()
+    })
+
+    //删除选中物品
+    $(".delSelect").click(() => {
+        $(".goods").each(function(){
+            if($(this).prop("checked")){
+                $(this).parent().parent().remove()
+                let goodsId=$(this).val()
+                for(let i=0;i<cartArr.length;i++){
+                    if(cartArr[i].goodsId==goodsId){
+                        cartArr.splice(i,1)
+                        break
+                    }
+                }
+
+            }
+        })
+
+        if (cartArr.length == 0) {
+            $("#checkAll").prop('checked',false)
+        }
+
+        total();
+    })
+</script>
+</html>
