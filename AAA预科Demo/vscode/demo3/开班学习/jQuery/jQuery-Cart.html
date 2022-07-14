@@ -14,20 +14,23 @@
     <!--    初始化显示-->
     <script type="text/javascript">
       $(()=>{
+
           $('table').css({margin: '0 auto'})
-          $('table[width="500"] tbody tr:odd').css({backgroundColor:'#ff6700'})
-          $('table[width="500"] tbody tr:even').css({backgroundColor:'#f0e000'})
           $('tr:first').css({backgroundColor:'#ff1f1f'})
           $('table[width="500"] caption').css({fontSize: '36px',color:'#f00',backgroundColor:'#0f0',borderTopLeftRadius:'40px',borderTopRightRadius:'40px'})
           $('table[width="600"] caption').css({fontSize: '36px',color:'#f00',backgroundColor:'#00f',borderTopLeftRadius:'40px',borderTopRightRadius:'50px'})
           $('table[width="600"]').css({marginTop: '50px'})
+          $('table[width="600"] tfoot').css({fontSize:'24px',lineHeight:'50px',borderStyle:'none',borderRadius:})
+          $('table[width="600"] tfoot button').css({fontSize:'20px'})
           this.Style= () => {
               $('td').css({textAlign:'center'})
               $('table[width="600"] tbody tr:even').css({backgroundColor: '#f0d3ca'})
               $('table[width="600"] tbody tr:odd').css({backgroundColor: '#acdb52'})
               $('table[width="600"] thead').css({backgroundColor: '#0da'})
               $('table[width="600"] thead').css({backgroundColor: '#0da'})
-
+              $('table[width="500"] tbody tr:odd').css({backgroundColor:'#ff6700'})
+              $('table[width="500"] tbody tr:even').css({backgroundColor:'#f0e000'})
+              $('a').css({textDecoration:'none',})
           }
           let goodsList = [
                 {'goodsId':1,'goodsName':'HUAWEI Mate40Pro','goodsPrice':6999.99},
@@ -95,23 +98,23 @@
     // 添加
     $("#goodsList").on("click",".add",function(){
         let goodsId=$(this).parent().siblings().first().text()
-        let flag=true;
+        let flag=true
         for(let i=0;i<cartArr.length;i++){
             if(cartArr[i].goodsId==goodsId){
-                cartArr[i].goodsNum++;
+                cartArr[i].goodsNum++
                 cartArr[i].subTotal=(cartArr[i].goodsNum*cartArr[i].goodsPrice).toFixed(2)
-                flag=false;
-                break;
+                flag=false
+                break
             }
         }
         if(flag){
-            let goods=new Object();
+            let goods=new Object()
             goods.goodsId=goodsId
             goods.goodsName=$(this).parent().siblings().eq(1).text()
             goods.goodsPrice=$(this).parent().siblings().eq(2).text()
-            goods.goodsNum=1;
+            goods.goodsNum=1
             goods.subTotal= (goods.goodsPrice * goods.goodsNum).toFixed(2)
-            cartArr.push(goods);
+            cartArr.push(goods)
         }
         $("#cart").empty()
         cartArr.forEach(function(goods){
@@ -134,8 +137,8 @@
         let goodsId=$(this).parent().parent().find(":checkbox").val()
         for(let i=0;i<cartArr.length;i++){
             if(cartArr[i].goodsId==goodsId){
-                cartArr.splice(i,1);
-                break;
+                cartArr.splice(i,1)
+                break
             }
         }
         if (cartArr.length == 0) {
@@ -215,7 +218,7 @@
             $("#checkAll").prop('checked',false)
         }
 
-        total();
+        total()
     })
 </script>
 </html>

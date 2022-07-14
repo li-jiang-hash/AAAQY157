@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>购物系统</title>
+  <script type="text/javascript" src="./.js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+$(()=>{
+  $('fieldset').css({width:'700px',margin:'0 auto'})
+  $('thead').css({backgroundColor:'#cccccc'})
+  let books= [
+    {"bookId":"1000100","bookName":"西游记", "bookPrice":50,"author":"吴承恩","pubDate":"2009-01-01"},
+    {"bookId":"1000101","bookName":"红楼梦", "bookPrice":43,"author":"曹雪芹","pubDate":"2008-03-01"},
+    {"bookId":"1000102","bookName":"水浒传", "bookPrice":54,"author":"施耐庵","pubDate":"2002-03-02"},
+    {"bookId":"1000103","bookName":"三国演义", "bookPrice":62,"author":"罗贯中","pubDate":"2005-01-04"},
+    {"bookId":"1000104","bookName":"史记", "bookPrice":38,"author":"司马迁","pubDate":"2000-05-01"}
+  ]
+  ;(function loading() {
+    books.forEach(function (books) {
+      let tr=`<tr>
+                <td>`+books.bookId+`</td>
+                <td>`+books.bookName+`</td>
+                <td>`+books.bookPrice+`</td>
+                <td>`+books.author+`</td>
+                <td>`+books.pubDate+`</td>
+                <td><button href="#" class="addList">购买图书</button></td>
+              </tr>`
+      $('#booksList').append(tr)
+    })
+  })()
+
+})
+  </script>
+</head>
+<body>
+<fieldset>
+  <legend>图书信息</legend>
+  <table border="1" rules="all" width="700">
+    <thead>
+    <tr>
+      <th>图书编号</th>
+      <th>图书名称</th>
+      <th>图书单价</th>
+      <th>图书作者</th>
+      <th>出版日期</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="booksList"></tbody>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>购物车</legend>
+  <table border="1" rules="all" width="700">
+    <thead>
+      <tr>
+        <th>图书编号</th>
+        <th>图书名称</th>
+        <th>图书单价</th>
+        <th>图书数量</th>
+        <th>小计</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody id="cart"></tbody>
+  </table>
+  <span>合计: <span id="result"></span></span>
+</fieldset>
+</body>
+<script type="text/javascript">
+  // 加入购物车
+  let cartArr = []
+  $("#booksList").on("click",".addList",function(){
+    let booksId=$(this).parent().siblings().first().text()
+    let flag=true
+    for(let i=0;i<cartArr.length;i++){
+      if(cartArr[i].bookId==booksId){
+        cartArr[i].bookNum++
+        cartArr[i].subTotal=Number(cartArr[i].bookNum) * Number(cartArr[i].bookPrice)
+        console.log('cartArr[i].bookNum',cartArr[i].bookNum,'cartArr[i].bookPrice',cartArr[i].bookPrice)
+        flag=false
+        break
+      }
+    }
+    if(flag){
+      let book=new Object()
+      book.bookId=booksId
+      book.bookName=$(this).parent().siblings().eq(1).text()
+      book.bookPrice=$(this).parent().siblings().eq(2).text()
+      book.bookNum=1
+      book.subTotal= Number(book.bookPrice) * Number(book.bookNum)
+      cartArr.push(book)
+    }
+    $("#cart").empty()
+    cartArr.forEach(function(book){
+      let tr=`<tr>
+                <td class="books">`+book.bookId+`</td>
+                <td>`+book.bookName+`</td>
+                <td>`+book.bookPrice+`</td>
+                <td><input type='button' value='-'/><input type="text" value='`+book.bookNum+`'/><input type='button' value='+'/></td>
+                <td>`+book.subTotal+`</td>
+                <td><button href='#' class='delBook' >删除图书</button></td>
+               </tr>`
+      $("#cart").append(tr)
+    })
+    totalPrice()
+
+    console.log($(':text'))
+  })
+
+  //    +/-操作
+  $('#cart').on('click',':button',function () {
+    let num = $(this).parent().children(':text').val()
+    // console.log(num)
+    switch ($(this).val()){
+      case '+':
+        num++
+        break
+      case '-':
+        num--
+        num = num<1 ? num=1 : num
+        break
+    }
+    let bookId=$(this).parent().siblings().eq(0).text()
+    for (let i = 0; i < cartArr.length; i++) {
+      if (cartArr[i].bookId==bookId){
+        cartArr[i].bookNum = num
+        cartArr[i].subTotal = num * cartArr[i].bookPrice
+        break
+      }
+    }
+    $(this).parent().children(':text').val(num)
+    let price=$(this).parent().prev().text()
+    $(this).parent().next().text(num*price)
+    totalPrice()
+  })
+
+
+  //删除
+  $("#cart").on("click",".delBook",function() {
+    if (confirm('确定删除么？',false)) {
+      $(this).parent().parent().remove()
+    let bookId = $(this).parent().siblings().eq(0).text()
+    for (let i = 0; i < cartArr.length; i++) {
+      if (cartArr[i].bookId == bookId) {
+        cartArr.splice(i, 1)
+        break
+      }if (cartArr.length == 1){
+        $('#result').text(' ')
+      }
+    }
+
+    //调用总价计算
+  }
+    totalPrice()
+  })
+
+  //计算总价
+  let totalPrice =()=>{
+    let num=0;
+    $('.books').each(function () {
+      num += Number($(this).siblings().eq(3).text())
+    })
+    // for (let i = 0; i < cartArr.length; i++) {
+    //   num += Number(cartArr[i].subTotal)
+    //   console.log(cartArr[i].subTotal,i,cartArr.length)
+    // }
+    $("#result").text(num)
+
+  }
+  $("#cart").on("keyup",":text",function() {
+    let num = $(this).val()
+    let reg = new RegExp("^[0-9]*$")
+    if (!reg.test(num)) {
+      alert("数量必须是数值");
+      $(this).css("background-color", "red");
+    } else {
+      $(this).css("background-color", "white");
+      if (1 > num || num > 100) {
+        alert("数量必须在1-100")
+        $(this).css("background-color", "red");
+      }
+    }
+  })
+</script>
+</html>

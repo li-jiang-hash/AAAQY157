@@ -35,17 +35,24 @@ class FamilyAccountSystem {
 
                 System.out.println("------------------------登记完成-----------------------");
             }else if(select == '3'){
-//                System.out.println("3 登记支出");
+                int money=0;
                 System.out.println("本次支出金额：");
-                int money = Utilty.readNumber();
+                for (int i = 0; i == 0 ;) {
+                    money = Utilty.readNumber();
+    //                System.out.println("3 登记支出");
 
-                balance = balance -money;
-
+    //                    判断消费是否大于账户余额。
+                    if(balance < money){
+                        System.out.println("消费金额大于账户余额，本次交易取消！\n\n请再次输入消费金额:");
+                    }else {
+                        balance = balance - money;
+                        i++;
+                    }
+                }
                 System.out.println("本次支出说明：");
                 String info = Utilty.readString();
 
                 details = details + ("支出\t\t\t"+ balance +"\t\t\t"+ money +"\t\t\t\t"+ info + "\n");
-
                 System.out.println("------------------------登记完成-----------------------");
             }else if(select == '4'){
                 System.out.println("确认是否退出(Y/N):");
