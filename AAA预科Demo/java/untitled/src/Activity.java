@@ -24,28 +24,28 @@ public class Activity {
                 System.out.println("本次消费总金额:"+userEnterMoney);
                 System.out.println("成功换购:2L装百世可乐一瓶");
             }else if (userEnterNum==2 || userEnterMoney>99){
-                if (userEnterNum <99) {
+                if (userEnterMoney <99) {
                     System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
                     return;
                 }
                 System.out.println("本次消费总金额:"+userEnterMoney);
                 System.out.println("成功换购:2L装可口可乐一瓶");
             }else if (userEnterNum==3 || userEnterMoney>99){
-                if (userEnterNum <99) {
+                if (userEnterMoney <99) {
                     System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
                     return;
                 }
                 System.out.println("本次消费总金额:"+userEnterMoney);
                 System.out.println("成功换购:5公斤面粉一袋");
             }else if (userEnterNum==4 || userEnterMoney>199){
-                if (userEnterNum <199) {
+                if (userEnterMoney <199) {
                     System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
                     return;
                 }
                 System.out.println("本次消费总金额:"+userEnterMoney);
                 System.out.println("成功换购:苏泊尔炒菜锅一个");
             }else if (userEnterNum==5 || userEnterMoney>199){
-                if (userEnterNum <199) {
+                if (userEnterMoney <199) {
                     System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
                     return;
                 }

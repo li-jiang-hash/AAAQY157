@@ -20,7 +20,7 @@
           $('table[width="500"] caption').css({fontSize: '36px',color:'#f00',backgroundColor:'#0f0',borderTopLeftRadius:'40px',borderTopRightRadius:'40px'})
           $('table[width="600"] caption').css({fontSize: '36px',color:'#f00',backgroundColor:'#00f',borderTopLeftRadius:'40px',borderTopRightRadius:'50px'})
           $('table[width="600"]').css({marginTop: '50px'})
-          $('table[width="600"] tfoot').css({fontSize:'24px',lineHeight:'50px',borderStyle:'none',borderRadius:})
+          $('table[width="600"] tfoot').css({fontSize:'24px',lineHeight:'50px',borderStyle:'none'})
           $('table[width="600"] tfoot button').css({fontSize:'20px'})
           this.Style= () => {
               $('td').css({textAlign:'center'})
@@ -190,7 +190,7 @@
     }
     //checkAll
     $("#checkAll").click(function(){
-        var checkAll=$("#checkAll").prop("checked")
+        let checkAll=$("#checkAll").prop("checked")
 
         $(".goods").each(function(){
             $(this).prop("checked",checkAll)
