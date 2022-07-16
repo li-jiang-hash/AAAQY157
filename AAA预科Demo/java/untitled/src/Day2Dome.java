@@ -5,7 +5,7 @@ public class Day2Dome {
     public static void main(String[] args) {
 
 //       金字塔
-//        Pyramid();
+        Pyramid();
 //      数字替换
 //        FlipFlop();
 //      鸡兔同笼
@@ -96,43 +96,43 @@ public class Day2Dome {
         int userEnterNum = sc.nextInt();
 //        int userEnterNum = sc.nextInt();
         if(userEnterNum>=0||userEnterNum<=5){
-//            判断
-            if(userEnterNum==1 || userEnterMoney>49){
-                if (userEnterMoney <49) {
-                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
-                    return;
-                }
-                System.out.println("本次消费总金额:"+userEnterMoney);
-                System.out.println("成功换购:2L装百世可乐一瓶");
-            }else if (userEnterNum==2 || userEnterMoney>99){
-                if (userEnterMoney <99) {
-                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
-                    return;
-                }
-                System.out.println("本次消费总金额:"+userEnterMoney);
-                System.out.println("成功换购:2L装可口可乐一瓶");
-            }else if (userEnterNum==3 || userEnterMoney>99){
-                if (userEnterMoney <99) {
-                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
-                    return;
-                }
-                System.out.println("本次消费总金额:"+userEnterMoney);
-                System.out.println("成功换购:5公斤面粉一袋");
-            }else if (userEnterNum==4 || userEnterMoney>199){
-                if (userEnterMoney <199) {
-                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
-                    return;
-                }
-                System.out.println("本次消费总金额:"+userEnterMoney);
-                System.out.println("成功换购:苏泊尔炒菜锅一个");
-            }else if (userEnterNum==5 || userEnterMoney>199){
-                if (userEnterMoney <199) {
-                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
-                    return;
-                }
-                System.out.println("本次消费总金额:"+userEnterMoney);
-                System.out.println("成功换购:欧莱雅爽肤水一瓶");
-            }
+////            判断
+//            if(userEnterNum==1 || userEnterMoney>49){
+//                if (userEnterMoney <49) {
+//                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
+//                    return;
+//                }
+//                System.out.println("本次消费总金额:"+userEnterMoney);
+//                System.out.println("成功换购:2L装百世可乐一瓶");
+//            }else if (userEnterNum==2 || userEnterMoney>99){
+//                if (userEnterMoney <99) {
+//                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
+//                    return;
+//                }
+//                System.out.println("本次消费总金额:"+userEnterMoney);
+//                System.out.println("成功换购:2L装可口可乐一瓶");
+//            }else if (userEnterNum==3 || userEnterMoney>99){
+//                if (userEnterMoney <99) {
+//                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
+//                    return;
+//                }
+//                System.out.println("本次消费总金额:"+userEnterMoney);
+//                System.out.println("成功换购:5公斤面粉一袋");
+//            }else if (userEnterNum==4 || userEnterMoney>199){
+//                if (userEnterMoney <199) {
+//                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
+//                    return;
+//                }
+//                System.out.println("本次消费总金额:"+userEnterMoney);
+//                System.out.println("成功换购:苏泊尔炒菜锅一个");
+//            }else if (userEnterNum==5 || userEnterMoney>199){
+//                if (userEnterMoney <199) {
+//                    System.out.println("换购失败:您的消费金额为"+userEnterMoney+"不满足换购条件");
+//                    return;
+//                }
+//                System.out.println("本次消费总金额:"+userEnterMoney);
+//                System.out.println("成功换购:欧莱雅爽肤水一瓶");
+//            }
         }else {
             System.out.println("没看清数字？选择错误");
 //            userEnterNum = sc.nextInt();
