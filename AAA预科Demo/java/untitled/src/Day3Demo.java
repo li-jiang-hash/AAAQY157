@@ -1,7 +1,10 @@
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 import java.util.Scanner;
-
+import D3.Calculator;
+import D4.Dice;
+import D4.DiceGame;
 public class Day3Demo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -22,7 +25,7 @@ public class Day3Demo {
 
 
 //        1.车辆
-        Car c = new Car("宝马","blue",5,220);
+        Car c = new Car("宝马","蓝色",5,220);
         c.printCar();
 //        2)
 
@@ -64,11 +67,45 @@ public class Day3Demo {
         System.out.println(c.marching(sc.nextInt()));
 
 //        2.募捐
-//        Foundation foun = new Foundation();
-//        System.out.print("请输入募捐金额:");
-//        foun.addFund(sc.nextDouble());
-//        3.
+        Foundation foun = new Foundation();
+        System.out.print("请输入募捐金额:");
+        foun.addFund(sc.nextDouble());
+//        3.计算器
+        Calculator cal = new Calculator();
+        System.out.print("请输入第一个数字:");
+        int num1 = sc.nextInt();
+        System.out.print("请输入第二个数字:");
+        int num2 = sc.nextInt();
+        cal.num1=num1;
+        cal.num2=num2;
+        cal.add();
+        cal.subtraction();
+        cal.multiplication();
+//       4.掷骰子
 
+        DiceGame dg = new DiceGame();
+        Dice di = new Dice();
+        for (int i = 0; i ==0;) {
+            System.out.print("开始投掷？(y/n):");
+            String str = sc.next();
+            if(Objects.equals(str,"y")){
+                di.roll();
+                int numx1 = di.getFaceValue();
+                System.out.println("骰子1掷出了:"+numx1);
+                di.roll();
+                int numx2 = di.getFaceValue();
+                System.out.println("骰子2掷出了:"+numx2);
+                if(dg.play(numx1,numx2)){
+                    System.out.println("骰子总和掷出了7，您赢了！");
+                }else{
+                    System.out.println("很遗憾，您输了！");
+                }
+            }
+            if(Objects.equals(str,"n")) {
+                System.out.println("您选择了退出，退出游戏………………");
+                i++;
+            }
+        }
 
     }
     public static int Solution(int n) {

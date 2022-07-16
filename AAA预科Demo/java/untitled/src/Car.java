@@ -13,7 +13,7 @@ public class Car {
         System.out.println("商标:"+trademark);
         System.out.println("颜色:"+color);
         System.out.println("载重人数:"+capacity);
-        System.out.println("最大时速:"+speedLimit);
+        System.out.println("最大时速:"+speedLimit+"Km/h");
     }
 
     String washName;
@@ -26,7 +26,7 @@ public class Car {
         System.out.println("洗车用掉"+washTime+"分钟");
     }
     public void filGas(int num){
-        System.out.println(systemYear+"年"+systemMonth+"月"+systemDay+"日您加了"+num+"L汽油。");
+        System.out.println(systemYear+"年"+systemMonth+"月"+systemDay+"日您的"+trademark+"加了"+num+"L汽油。");
     }
 
     public String marching(int v){
