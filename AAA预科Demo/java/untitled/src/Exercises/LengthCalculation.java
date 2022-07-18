@@ -23,6 +23,7 @@ public class LengthCalculation {
         }
         return length;
     }
+//    判断字符串内容
     public void ifEquals(String s1,String s2){
         if(s1.equals(s2)){
             System.out.println("字符串1与字符串2内容相等");

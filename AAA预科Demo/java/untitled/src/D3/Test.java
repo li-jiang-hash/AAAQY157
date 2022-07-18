@@ -16,13 +16,11 @@ public class Test {
         ca.subtraction();
         ca.multiplication();
 //        Scanner sc = new Scanner(System.in);
-//        String str = sc.next();
-//        switch (str){
-//            case "+":
-//                ca.add();
-//                break;
-//                case
-//        }
+        String str = sc.next();
+        switch (str){
+            case "+": ca.add();
+                break;
+        }
 
     }
 }
