@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MinMaxValue {
-    public static void main(String[] args) {
+    public static void main(StringDemo[] args) {
         Scanner sc = new Scanner(System.in);
         int min = -1,max=101,sum=0;
         for (int i = 1; i < 6; i++) {

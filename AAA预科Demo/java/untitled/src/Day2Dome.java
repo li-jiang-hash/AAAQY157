@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Day2Dome {
-    public static void main(String[] args) {
+    public static void main(StringDemo[] args) {
 
 //       金字塔
         Pyramid();

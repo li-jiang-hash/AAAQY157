@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RandomVal {
-    public static void main(String[] args) {
+    public static void main(StringDemo[] args) {
         
         Scanner sc = new Scanner(System.in);
         Random r = new Random();

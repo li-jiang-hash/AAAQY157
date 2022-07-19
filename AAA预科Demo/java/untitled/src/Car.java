@@ -3,7 +3,7 @@ public class Car {
     String color;
     int capacity;
     int speedLimit;
-    public Car(String trademark,String color,int capacity,int speedLimit){
+    public Car(String trademark, String color, int capacity, int speedLimit){
         this.trademark = trademark;
         this.color = color;
         this.capacity = capacity;

@@ -19,7 +19,7 @@ public class Student {
     public int info(int i){
         return stuAge+i;
     }
-    public void study(String subject,int hour){
+    public void study(StringDemo subject, int hour){
         System.out.println(stuName+"每天学习"+subject+"课程"+hour+"小时");
     }
     public double work(double hour,double money){

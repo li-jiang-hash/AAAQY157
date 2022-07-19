@@ -1,5 +1,5 @@
 public class FlipFlop {
-    public static void main(String[] args) {
+    public static void main(StringDemo[] args) {
         for (int i = 1; i < 101; i++) {
             if(i%5==1){
                 System.out.println();

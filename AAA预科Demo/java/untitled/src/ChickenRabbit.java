@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ChickenRabbit {
-    public static void main(String[] args) {
+    public static void main(StringDemo[] args) {
         Scanner sc = new Scanner(System.in);
         for(int i=0;i==0;){
             System.out.println("请输入总脚数：");
