@@ -40,7 +40,7 @@ public class Day3Demo {
         int washTime = sc.nextInt();
 
 
-        SimpleDateFormat formatter = new SimpleDateFormat("yy-MM-dd");
+//        SimpleDateFormat formatter = new SimpleDateFormat("yy-MM-dd");
         Calendar ca = Calendar.getInstance();
         int year = ca.get(Calendar.YEAR);
         int month = ca.get(Calendar.MONTH);
