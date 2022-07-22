@@ -81,8 +81,8 @@ public class Day3Demo {
         cal.add();
         cal.subtraction();
         cal.multiplication();
-//       4.掷骰子
 
+//       4.掷骰子
         DiceGame dg = new DiceGame();
         Dice di = new Dice();
         for (int i = 0; i ==0;) {

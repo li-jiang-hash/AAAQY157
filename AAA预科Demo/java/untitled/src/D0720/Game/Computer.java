@@ -1,11 +1,6 @@
 package D0720.Game;
 
 public class Computer {
-    private int pcId = (int)(Math.random()*4);
-
-    public void setPcId(int pcId) {
-        this.pcId = pcId;
-    }
     private String PcHeroName;
     private int isEqual;
 
@@ -36,6 +31,7 @@ public class Computer {
     }
 
     public int PCChoice(){
+        int pcId = (int)(Math.random()*3+1);
         switch (pcId){
             case 1:
                 System.out.println(PcHeroName+"出拳:石头");

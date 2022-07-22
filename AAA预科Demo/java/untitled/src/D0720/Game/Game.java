@@ -26,19 +26,19 @@ public class Game {
                     break;
                 case 3:
                     pc.setPcHero("曹操");
+                    break;
             }
             System.out.println();
             System.out.print("要开始吗？(y/n):");
             String userSelectYN= sc.next();
-            isNum++;
             switch (userSelectYN){
                 case "y":
                     System.out.print("请出拳:[1.石头][2.剪刀][3.布]:");
                     int userSelectId = sc.nextInt();
+                    isNum++;
                     int userEnterId = uc.userChoice(userSelectId);
                     int pcId = pc.PCChoice();
                     int GameId = userEnterId -pcId;
-                    System.out.println(pcId);
                     switch (GameId){
                         case -1:
                         case 2:
@@ -70,6 +70,7 @@ public class Game {
                         System.out.println("恭喜恭喜，您赢了！！");
                     }
                     i++;
+                    sc.close();
                     break;
                 default:
                     System.out.println("输入有误自动退出！！");
