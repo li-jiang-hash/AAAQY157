@@ -1,2 +1,4 @@
-package D0721Second;public class Printer {
+package D0721Second;
+public class Printer {
+    void print(){};
 }

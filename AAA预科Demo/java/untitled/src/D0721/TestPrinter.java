@@ -5,5 +5,6 @@ public class TestPrinter {
         Employee e = new Employee();
         e.makeBook(new BlackPrinter());
         e.makeBook(new ColorPrinter());
+        e.makeBook(new PhotoPrinter());
     }
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数柯里化</title>
+</head>
+<body>
+<script type="text/javascript">
+  function add() {
+    let args = Array.prototype.slice.call(arguments)  //[1]  [1,2,3,4,5,]
+    const _addr =function () {
+      args.push(...arguments)
+      return _addr
+    }
+//  利用变量的隐式转换
+    _addr.toString =function () {
+      return args.reduce((a, b) => a + b)
+    }
+    return _addr
+  }
+
+  console.log(add(1)(2)(3)(5)(100)+"")
+</script>
+</body>
+</html>

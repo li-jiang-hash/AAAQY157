@@ -1,7 +1,7 @@
 package D0721Second;
 
-public class PrinterMaster {
-    void printer(Printer p){
+public class Employee {
+    void printer(Printer p) {
         p.print();
     }
 }
